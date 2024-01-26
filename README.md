@@ -1,1 +1,1 @@
-# home
+## Corporate `$HOME`
