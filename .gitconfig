@@ -8,7 +8,7 @@
 	editor = code --wait
 [includeIf "hasconfig:remote.*.url:git@github.com-Corpo:*/**"]
 	path = ~/.dotfiles/git_config_corpo
-[includeIf "hasconfig:remote.*.url:https://github.com*/**"]
-	path = ~/.dotfiles/git_config_corpo
 [includeIf "hasconfig:remote.*.url:git@github.com-Perso:*/**"]
 	path = ~/.dotfiles/git_config_perso
+[includeIf "hasconfig:remote.*.url:https://github.com*/**"]
+	path = ~/.dotfiles/git_config_corpo
