@@ -13,4 +13,6 @@ alias log='git log -1'
 alias remote='git remote -v'
 alias scope='git config --show-origin --show-scope --get user.name'
 alias details='remote && scope'
+
+# Others
 alias neofetch='sh $HOME/.neofetch.sh'
