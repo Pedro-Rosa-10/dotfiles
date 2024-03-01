@@ -19,3 +19,4 @@ alias details='remote && scope'
 
 # Others
 alias neofetch='sh $HOME/.neofetch.sh'
+alias activate='source venv/Scripts/activate'
