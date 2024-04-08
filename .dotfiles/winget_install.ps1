@@ -12,7 +12,6 @@ winget install --id=AmanHarwara.Altus -e  ;
 winget install --id=SomePythonThings.WingetUIStore -e  ;
 winget install --id=VideoLAN.VLC -e  ;
 winget install --id=RARLab.WinRAR -e  ;
-winget install --id=valinet.ExplorerPatcher -e  ;
 winget install --id=Libretro.RetroArch  -e  
 echo ''
 echo 'Finished installing all applications'
