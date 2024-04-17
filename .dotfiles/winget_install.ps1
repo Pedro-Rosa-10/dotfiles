@@ -8,7 +8,6 @@ winget install --id=OBSProject.OBSStudio -e  ;
 winget install --id=Microsoft.PowerToys -e  ;
 winget install --id=Spotify.Spotify -v "1.2.29.605.g66a43ceb" -e  ;
 winget install --id=Microsoft.VisualStudioCode -e  ;
-winget install --id=StefanMalzner.Franz -e  ;
 winget install --id=SomePythonThings.WingetUIStore -e  ;
 winget install --id=VideoLAN.VLC -e  ;
 winget install --id=RARLab.WinRAR -e  ;
