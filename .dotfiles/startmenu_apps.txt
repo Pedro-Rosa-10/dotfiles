@@ -1,0 +1,26 @@
+AnyDesk.lnk*
+Beyond Trust.lnk*
+Bleachbit.lnk*
+Chrome.lnk*
+Citrix.lnk*
+Datetime.lnk*
+desktop.ini
+Discord.lnk*
+Edge.lnk*
+Excel.lnk*
+Firefox.lnk*
+GIMP.lnk*
+Home.lnk*
+Metris.lnk*
+OBS Studio.lnk*
+OneDrive.lnk*
+PhotoScape.lnk*
+PowerPoint.lnk*
+PowerToys.lnk*
+Protheus.lnk*
+Spotify.lnk*
+Teams.lnk*
+VS Code.lnk*
+WhatsApp.lnk*
+WingetUI.lnk*
+Word.lnk*
