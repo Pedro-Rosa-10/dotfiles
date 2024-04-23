@@ -1,4 +1,5 @@
-set shell := ["bash", "-uc"]
+# Use PowerShell instead of sh:
+set shell := ["powershell.exe", "-c"]
 
 # SSH key for corporate account
 ssh-corporate:
