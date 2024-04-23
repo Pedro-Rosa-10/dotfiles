@@ -3,6 +3,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Just pre-built binary
+export PATH="$PATH:$HOME/bin"
+
 # Git routines
 alias status='git status'
 alias add0='git add .'
