@@ -1,6 +1,9 @@
 # Use PowerShell instead of sh:
 set shell := ["powershell.exe", "-c"]
 
+_default:
+  just --list
+
 # SSH key for corporate account
 ssh-corporate:
   echo 'Creating SSH key for the corporate account'
