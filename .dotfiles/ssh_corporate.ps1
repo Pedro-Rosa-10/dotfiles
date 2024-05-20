@@ -1,5 +1,0 @@
-echo 'Creating SSH key for the corporate account'
-ssh-keygen -t rsa -b 4096 -C "144266741+Pedro-Rosa-10@users.noreply.github.com"
-start chrome https://github.com/settings/keys
-cat .\.ssh\id_rsa.pub
-echo 'New SSH key created under .\.ssh\id_rsa'
