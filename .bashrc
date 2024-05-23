@@ -25,5 +25,11 @@ alias activate='source venv/Scripts/activate'
 alias compress='ffmpeg -i $HOME/Videos/video.mp4 -vcodec libx265 -crf 28 $HOME/Videos/compressed.mp4'
 alias startmenu='ls $HOME/AppData/Roaming/Microsoft/Windows/Start\ Menu/#Applications > $HOME/.dotfiles/startmenu_apps'
 
-# Playwright
-export PLAYWRIGHT_BROWSERS_PATH='C:\Users\poaped10\Repos\metris-reports-ppad\pw-browsers'
+# paste.rs
+function paste() {
+    echo ""
+    local file=${1:-/dev/stdin}
+    curl --data-binary @${file} https://paste.rs
+    echo ""
+    echo ""
+}
