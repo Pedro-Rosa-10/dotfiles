@@ -58,5 +58,5 @@ setup-github:
 	ssh-keygen -t ed25519 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
 	echo -e '\n Copy the newly created key\n'
 	cat ~/.ssh/id_ed25519.pub
-	echo -e '\n Paste it into a new SSH key udner: https://github.com/settings/keys\n'
+	echo -e '\n Paste it into a new SSH key under: https://github.com/settings/keys\n'
 	echo -e ' Git setup finished\n'
