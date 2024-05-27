@@ -49,3 +49,14 @@ setup-aliases:
 	echo -e '\n Setting up the Bash Aliases file\n'
 	echo -e "\n# Bash aliases\nif [ -f ~/.bash_aliases ]; then\n. ~/.bash_aliases\nfi" >> ~/.bashrc
 	echo -e ' Bash Aliases setup finished\n'
+
+# Set up git and GitHub account
+setup-github:
+	#!/bin/bash
+
+	echo -e '\n Generating a new SSH key\n'
+	ssh-keygen -t rsa -b 4096 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
+	echo -e '\n Copy the newly created key\n'
+	cat ~/.ssh/id_rsa.pub
+	echo -e '\n Paste it into a new SSH key on: https://github.com/settings/keys'
+	echo -e ' Git setup finished\n'
