@@ -42,14 +42,6 @@ winget-install:
   winget install --id=Google.Chrome -e  ;
   echo 'Finished installing all applications'
 
-# Set up user bash_aliases file
-setup-aliases:
-	#!/bin/bash
-
-	echo -e '\n Setting up the Bash Aliases file\n'
-	echo -e "\n# Bash aliases\nif [ -f ~/.bash_aliases ]; then\n. ~/.bash_aliases\nfi" >> ~/.bashrc
-	echo -e ' Bash Aliases setup finished\n'
-
 # Set up GitHub corporate account
 setup-corpo:
 	#!/bin/bash
