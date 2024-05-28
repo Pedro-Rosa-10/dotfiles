@@ -8,7 +8,7 @@
 	editor = code --wait
 [includeIf "gitdir:~/**"]
     path = ~/.gitconfig_corpo
-[includeIf "gitdir:~/Repos/Corporate/**"]
+[includeIf "gitdir:~/ReposC/**"]
     path = ~/.gitconfig_corpo
-[includeIf "gitdir:~/Repos/Personal/**"]
+[includeIf "gitdir:~/ReposP/**"]
     path = ~/.gitconfig_perso
