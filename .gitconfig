@@ -6,9 +6,9 @@
 	rebase = false
 [core]
 	editor = code --wait
-[includeIf "gitdir:~/**"]
-    path = ~/.gitconfig_corpo
-[includeIf "gitdir:~/Corporate/**"]
-    path = ~/.gitconfig_corpo
-[includeIf "gitdir:~/Personal/**"]
-    path = ~/.gitconfig_perso
+[includeIf "hasconfig:remote.*.url:git@github.com-Corpo:*/**"]
+	path = ~/.gitconfig_corpo
+[includeIf "hasconfig:remote.*.url:https://github.com*/**"]
+	path = ~/.gitconfig_corpo
+[includeIf "hasconfig:remote.*.url:git@github.com-Perso:*/**"]
+	path = ~/.gitconfig_perso
