@@ -18,5 +18,4 @@ alias compress='ffmpeg -i $HOME/Videos/video.mp4 -vcodec libx265 -crf 28 $HOME/V
 alias audio='ffmpeg -i $HOME/Videos/video.mp4 -vn -acodec mp3 $HOME/Videos/audio.mp3'
 
 # Others
-alias neofetch='sh $HOME/.neofetch.sh'
 alias activate='source venv/Scripts/activate'
