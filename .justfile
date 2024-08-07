@@ -7,18 +7,22 @@ _default:
 # SSH key for corporate account
 ssh-corporate:
   echo 'Creating SSH key for the corporate account'
-  ssh-keygen -t rsa -b 4096 -C "144266741+Pedro-Rosa-10@users.noreply.github.com"
-  start chrome https://github.com/settings/keys
+  ssh-keygen -t rsa -b 4096 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
+  echo 'Copy the newly created key'
   cat .\.ssh\id_rsa.pub
-  echo 'New SSH key created under .\.ssh\id_rsa'
+  echo ''
+  echo 'Paste it into a new SSH key on: https://github.com/settings/keys'
+  echo ''
 
 # SSH key for personal account
 ssh-personal:
   echo 'Creating SSH key for the personal account'
-  ssh-keygen -t ed25519 -C "13894059+Krauzer94@users.noreply.github.com"
-  start msedge https://github.com/settings/keys
+  ssh-keygen -t ed25519 -C 13894059+Krauzer94@users.noreply.github.com
+  echo 'Copy the newly created key'
   cat .\.ssh\id_ed25519.pub
-  echo 'New SSH key created under .\.ssh\id_ed25519'
+  echo ''
+  echo 'Paste it into a new SSH key on: https://github.com/settings/keys'
+  echo ''
 
 # Chris Titus' best Windows Utility
 windows-util:
@@ -41,25 +45,3 @@ winget-install:
   winget install --id=AnyDeskSoftwareGmbH.AnyDesk -e  ;
   winget install --id=Google.Chrome -e  ;
   echo 'Finished installing all applications'
-
-# Set up GitHub corporate account
-setup-corpo:
-	#!/bin/bash
-
-	echo -e '\n Generating a new SSH key\n'
-	ssh-keygen -t rsa -b 4096 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
-	echo -e '\n Copy the newly created key\n'
-	cat ~/.ssh/id_rsa.pub
-	echo -e '\n Paste it into a new SSH key on: https://github.com/settings/keys'
-	echo -e ' Git setup finished\n'
-
-# Set up GitHub personal account
-setup-perso:
-	#!/bin/bash
-
-	echo -e '\n Generating a new SSH key\n'
-	ssh-keygen -t ed25519 -C 13894059+Krauzer94@users.noreply.github.com
-	echo -e '\n Copy the newly created key\n'
-	cat ~/.ssh/id_ed25519.pub
-	echo -e '\n Paste it into a new SSH key on: https://github.com/settings/keys'
-	echo -e ' Git setup finished\n'
