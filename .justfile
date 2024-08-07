@@ -32,16 +32,22 @@ windows-util:
 # Install all apps using winget
 winget-install:
   echo 'Installing applications using winget'
-  winget install --id=BleachBit.BleachBit -e  ;
-  winget install --id=Discord.Discord -e  ;
-  winget install --id=GIMP.GIMP -e  ;
-  winget install --id=OBSProject.OBSStudio -e  ;
-  winget install --id=Microsoft.PowerToys -e  ;
-  winget install --id=Spotify.Spotify -e  ;
-  winget install --id=Microsoft.VisualStudioCode -e  ;
-  winget install --id=SomePythonThings.WingetUIStore -e  ;
-  winget install --id=VideoLAN.VLC -e  ;
-  winget install --id=RARLab.WinRAR -e  ;
-  winget install --id=AnyDeskSoftwareGmbH.AnyDesk -e  ;
-  winget install --id=Google.Chrome -e  ;
+  $applications = @(
+    "BleachBit.BleachBit",
+    "Discord.Discord",
+    "GIMP.GIMP",
+    "OBSProject.OBSStudio",
+    "Microsoft.PowerToys",
+    "Spotify.Spotify",
+    "Microsoft.VisualStudioCode",
+    "SomePythonThings.WingetUIStore",
+    "VideoLAN.VLC",
+    "RARLab.WinRAR",
+    "AnyDeskSoftwareGmbH.AnyDesk",
+    "Google.Chrome"
+  )
+
+  foreach ($app in $applications) {
+    winget install --id=$app -e
+  }
   echo 'Finished installing all applications'
