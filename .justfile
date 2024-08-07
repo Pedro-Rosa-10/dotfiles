@@ -33,21 +33,35 @@ windows-util:
 winget-install:
   echo 'Installing applications using winget'
   $applications = @(
-    "BleachBit.BleachBit",
-    "Discord.Discord",
-    "GIMP.GIMP",
-    "OBSProject.OBSStudio",
-    "Microsoft.PowerToys",
-    "Spotify.Spotify",
-    "Microsoft.VisualStudioCode",
-    "SomePythonThings.WingetUIStore",
-    "VideoLAN.VLC",
-    "RARLab.WinRAR",
-    "AnyDeskSoftwareGmbH.AnyDesk",
-    "Google.Chrome"
+  "BleachBit.BleachBit",
+  "Discord.Discord",
+  "GIMP.GIMP",
+  "OBSProject.OBSStudio",
+  "Microsoft.PowerToys",
+  "Spotify.Spotify",
+  "Microsoft.VisualStudioCode",
+  "SomePythonThings.WingetUIStore",
+  "VideoLAN.VLC",
+  "RARLab.WinRAR",
+  "AnyDeskSoftwareGmbH.AnyDesk",
+  "Google.Chrome"
   )
 
   foreach ($app in $applications) {
-    winget install --id=$app -e
+  winget install --id=$app -e
   }
   echo 'Finished installing all applications'
+
+# Install and setup AlpineWSL
+installs-alpine:
+  #!/bin/bash
+
+  packages=( shadow git curl openssh libstdc++ )
+  for package in "${packages[@]}"; do sudo apk add "$package"	done
+  chsh krauzer
+  echo 'test -f ~/.bashrc && . ~/.bashrc' > ~/.bash_profile
+  echo '\n Creating SSH key for the personal account'
+  ssh-keygen -t ed25519 -C 13894059+Krauzer94@users.noreply.github.com
+  echo '\n Copy the newly created key'
+  cat ~/ssh/id_ed25519.pub
+  echo '\n Paste it into a new SSH key on: https://github.com/settings/keys'
