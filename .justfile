@@ -63,10 +63,12 @@ installs-alpine:
   chsh krauzer
   echo 'test -f ~/.bashrc && . ~/.bashrc' > ~/.bash_profile
   echo ''
-  echo '  Creating SSH key for the personal account'
+  echo 'Creating SSH key for the personal account'
   ssh-keygen -t ed25519 -C 13894059+Krauzer94@users.noreply.github.com
   echo ''
-  echo '  Copy the newly created key'
+  echo 'Copy the newly created key'
+  echo ''
   cat ~/.ssh/id_ed25519.pub
   echo ''
-  echo '  Paste it into a new SSH key on: https://github.com/settings/keys'
+  echo 'Paste it into a new SSH key on: https://github.com/settings/keys'
+  echo ''
