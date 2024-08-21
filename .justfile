@@ -53,18 +53,3 @@ installs-ubuntu:
     sudo apt install "$package" -y
   done
   echo 'Finished installing all applications'
-
-# Install ArchWSL specific apps
-installs-arch:
-  #!/usr/bin/env bash
-
-  echo 'Installing ArchWSL specific apps'
-  packages=(
-    curl wget git
-    which openssh
-    python python-pip
-  )
-  for package in "${packages[@]}"; do
-    sudo pacman -S --needed "$package" --noconfirm
-  done
-  echo 'Finished installing all applications'
