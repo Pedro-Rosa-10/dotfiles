@@ -1,3 +1,9 @@
+# Update system
+alias uupdate='sudo apt update && sudo apt upgrade -y'
+alias aupdate='sudo pacman -Syu --noconfirm'
+alias uclean='sudo apt autoremove --purge'
+alias aclean='sudo pacman -Rns $(pacman -Qtdq) --noconfirm'
+
 # Git routines
 alias status='git status'
 alias add0='git add .'
