@@ -4,25 +4,13 @@ set shell := ["powershell.exe", "-c"]
 _default:
   just --list
 
-# SSH key for corporate account
-ssh-corporate:
-  echo 'Creating SSH key for the corporate account'
-  ssh-keygen -t ed25519 -b 4096 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
-  echo 'Copy the newly created key'
-  cat .\.ssh\id_ed25519.pub
-  echo ''
-  echo 'Paste it into a new SSH key on: https://github.com/settings/keys'
-  echo ''
-
-# SSH key for personal account
-ssh-personal:
-  #!/usr/bin/env bash
-
-  echo -e '\nCreating SSH key for the personal account'
-  ssh-keygen -t ed25519 -C 13894059+Krauzer94@users.noreply.github.com
-  echo -e '\nCopy the newly created key'
-  cat ~/.ssh/id_ed25519.pub
-  echo '\nPaste it into a new SSH key on: https://github.com/settings/keys'
+# Set up git and GitHub account
+setup-github:
+    echo -e '\n Generating a new SSH key\n'
+    ssh-keygen -t ed25519 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
+    echo -e '\n Copy the newly created key\n'
+    cat ~/.ssh/id_ed25519.pub
+    echo -e '\n Paste it into a new SSH key: https://github.com/settings/keys\n'
 
 # Chris Titus' best Windows Utility
 windows-util:
