@@ -16,7 +16,7 @@ ssh-corporate:
 
 # SSH key for personal account
 ssh-personal:
-  #!/bin/bash
+  #!/usr/bin/env bash
 
   echo -e '\nCreating SSH key for the personal account'
   ssh-keygen -t ed25519 -C 13894059+Krauzer94@users.noreply.github.com
@@ -54,7 +54,7 @@ winget-install:
 
 # Install UbuntuWSL specific apps
 installs-ubuntu:
-  #!/bin/bash
+  #!/usr/bin/env bash
 
   echo 'Installing UbuntuWSL specific apps'
   packages=(
