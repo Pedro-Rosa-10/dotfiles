@@ -1,7 +1,7 @@
 # Update system
 alias uupdate='sudo apt update && sudo apt upgrade -y'
 alias aupdate='sudo pacman -Syu --noconfirm'
-alias uclean='sudo apt autoremove --purge'
+alias uclean='sudo apt autoremove && sudo apt clean && sudo apt autoclean'
 alias aclean='sudo pacman -Rns $(pacman -Qtdq) --noconfirm'
 
 # Git routines
