@@ -1,3 +1,6 @@
+[user]
+    name = Pedro-Rosa-10
+    email = 144266741+Pedro-Rosa-10@users.noreply.github.com
 [init]
 	defaultBranch = main
 [color]
@@ -5,10 +8,4 @@
 [pull]
 	rebase = false
 [core]
-	editor = \"C:\\Users\\poaped10\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
-[includeIf "hasconfig:remote.*.url:git@github.com:Pedro-Rosa-10*/**"]
-	path = ~/.gitconfig_corpo
-[includeIf "hasconfig:remote.*.url:https://github.com*/**"]
-	path = ~/.gitconfig_corpo
-[includeIf "hasconfig:remote.*.url:git@github.com:Krauzer94*/**"]
-	path = ~/.gitconfig_perso
+	editor = code --wait

@@ -7,9 +7,9 @@ _default:
 # SSH key for corporate account
 ssh-corporate:
   echo 'Creating SSH key for the corporate account'
-  ssh-keygen -t rsa -b 4096 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
+  ssh-keygen -t ed25519 -b 4096 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
   echo 'Copy the newly created key'
-  cat .\.ssh\id_rsa.pub
+  cat .\.ssh\id_ed25519.pub
   echo ''
   echo 'Paste it into a new SSH key on: https://github.com/settings/keys'
   echo ''
