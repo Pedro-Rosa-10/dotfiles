@@ -52,14 +52,17 @@ winget-install:
   }
   echo 'Finished installing all applications'
 
-# Install and setup AlpineWSL
-installs-alpine:
+# Install UbuntuWSL specific apps
+installs-ubuntu:
   #!/bin/bash
 
-  packages=( shadow git curl openssh libstdc++ )
+  echo 'Installing UbuntuWSL specific apps'
+  packages=(
+    curl wget git
+    python3 python3-pip python3-venv
+  )
   for package in "${packages[@]}"; do
-    sudo apk add "$package"
+    sudo apt install "$package" -y
   done
-  chsh krauzer
-  echo 'test -f ~/.bashrc && . ~/.bashrc' > ~/.bash_profile
-  just ssh-personal
+
+  echo 'Finished installing all applications'
