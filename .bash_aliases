@@ -1,8 +1,6 @@
 # Update system
-alias uupdate='sudo apt update && sudo apt upgrade -y'
-alias aupdate='sudo pacman -Syu --noconfirm'
-alias uclean='sudo apt autoremove && sudo apt clean && sudo apt autoclean'
-alias aclean='sudo pacman -Rns $(pacman -Qtdq) --noconfirm'
+alias supdate='sudo apt update && sudo apt upgrade -y'
+alias sclean='sudo apt autoremove && sudo apt clean && sudo apt autoclean'
 
 # Git routines
 alias status='git status'
@@ -25,3 +23,4 @@ alias audio='ffmpeg -i $HOME/Videos/video.mp4 -vn -acodec mp3 $HOME/Videos/audio
 
 # Others
 alias activate='source venv/Scripts/activate'
+alias ll='ls -l --color=auto'
