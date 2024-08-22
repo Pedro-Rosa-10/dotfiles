@@ -4,6 +4,25 @@ set shell := ["powershell.exe", "-c"]
 _default:
   just --list
 
+# Install UbuntuWSL specific apps
+installs-ubuntu:
+  set shell := ["bash", "-c"]
+  #!/usr/bin/env bash
+
+  echo 'Installing UbuntuWSL specific apps'
+  packages=(
+  curl
+  wget
+  git
+  python3
+  python3-pip
+  python3-venv
+  )
+  for package in "${packages[@]}"; do
+  sudo apt install "$package" -y
+  done
+  echo 'Finished installing all applications'
+
 # Set up git and GitHub account
 setup-github:
   set shell := ["bash", "-c"]
@@ -46,26 +65,6 @@ winget-install:
   winget install --id=$app -e
   }
   echo 'Finished installing all applications'
-
-# Install UbuntuWSL specific apps
-installs-ubuntu:
-  set shell := ["bash", "-c"]
-  #!/usr/bin/env bash
-
-  echo 'Installing UbuntuWSL specific apps'
-  packages=(
-  curl
-  wget
-  git
-  python3
-  python3-pip
-  python3-venv
-  )
-  for package in "${packages[@]}"; do
-  sudo apt install "$package" -y
-  done
-  echo 'Finished installing all applications'
-
 
 # Compress a video using FFmpeg
 [no-cd]
