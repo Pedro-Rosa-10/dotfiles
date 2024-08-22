@@ -22,5 +22,5 @@ alias compress='ffmpeg -i $HOME/Videos/video.mp4 -vcodec libx265 -crf 28 $HOME/V
 alias audio='ffmpeg -i $HOME/Videos/video.mp4 -vn -acodec mp3 $HOME/Videos/audio.mp3'
 
 # Others
-alias activate='source venv/Scripts/activate'
+alias activate='source venv/bin/activate'
 alias ll='ls -l --color=auto'
