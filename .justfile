@@ -6,6 +6,7 @@ _default:
 
 # Set up git and GitHub account
 setup-github:
+  set shell := ["bash", "-c"]
   #!/usr/bin/env bash
 
   echo -e '\n Generating a new SSH key\n'
@@ -48,15 +49,20 @@ winget-install:
 
 # Install UbuntuWSL specific apps
 installs-ubuntu:
+  set shell := ["bash", "-c"]
   #!/usr/bin/env bash
 
   echo 'Installing UbuntuWSL specific apps'
   packages=(
-    curl wget git
-    python3 python3-pip python3-venv
+  curl
+  wget
+  git
+  python3
+  python3-pip
+  python3-venv
   )
   for package in "${packages[@]}"; do
-    sudo apt install "$package" -y
+  sudo apt install "$package" -y
   done
   echo 'Finished installing all applications'
 
