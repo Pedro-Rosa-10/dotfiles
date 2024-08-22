@@ -1,6 +1,3 @@
-# Use PowerShell instead of sh:
-set shell := ["powershell.exe", "-c"]
-
 _default:
   just --list
 
