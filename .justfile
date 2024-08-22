@@ -1,3 +1,6 @@
+# Set the default shell
+set shell := ["powershell.exe", "-c"]
+
 _default:
   just --list
 
