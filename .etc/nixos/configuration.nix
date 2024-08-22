@@ -19,7 +19,6 @@
   # System native pacages
   environment.systemPackages = with pkgs; [
     home-manager
-    wget
   ];
 
   # VS Code inside WSL
