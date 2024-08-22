@@ -2,6 +2,10 @@
 alias supdate='sudo apt update && sudo apt upgrade -y'
 alias sclean='sudo apt autoremove && sudo apt clean && sudo apt autoclean'
 
+# NixOS specific
+alias nrswitch='sudo nixos-rebuild switch'
+alias hmswitch='home-manager switch'
+
 # Git routines
 alias status='git status'
 alias add0='git add .'
