@@ -6,6 +6,7 @@ _default:
 
 # Sets up NixWSL config files
 setup-nixwsl:
+  set shell := ["bash", "-c"]
   #!/usr/bin/env bash
 
   echo 'Setting up NixWSL configuration'
@@ -19,6 +20,7 @@ setup-nixwsl:
 
 # Set up git and GitHub account
 setup-github:
+  set shell := ["bash", "-c"]
   #!/usr/bin/env bash
 
   echo -e '\n Generating a new SSH key\n'
@@ -29,13 +31,15 @@ setup-github:
 
 # Chris Titus' best Windows Utility
 windows-util:
-  shell := ['pwsh', '-Command']
+  set shell := ["powershell.exe", "-c"]
 
   echo 'Opening the best Windows Utility'
   irm christitus.com/win | iex
 
 # Install Windows specific apps
 installs-windows:
+  set shell := ["powershell.exe", "-c"]
+
   echo 'Installing all Windows specific apps'
   $applications = @(
   "BleachBit.BleachBit",
@@ -60,6 +64,8 @@ installs-windows:
 # Compress a video using FFmpeg
 [no-cd]
 compress:
+  set shell := ["powershell.exe", "-c"]
+
   echo 'Compressing the video.mp4 video'
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo 'New compressed video file compressed.mp4'
@@ -67,6 +73,8 @@ compress:
 # Extract the audio from a video
 [no-cd]
 audio:
+  set shell := ["powershell.exe", "-c"]
+
   echo 'Extacting the audio from video.mp4'
   ffmpeg -i  .\video.mp4 -vn -acodec mp3  .\audio.mp3
   echo 'The audio was extracted to audio.mp3'
