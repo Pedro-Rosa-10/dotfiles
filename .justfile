@@ -1,31 +1,21 @@
-# Set the default shell
-set shell := ["powershell.exe", "-c"]
-
 _default:
   just --list
 
-# Install UbuntuWSL specific apps
-installs-ubuntu:
-  set shell := ["bash", "-c"]
+# Sets up NixWSL config files
+setup-nixwsl:
   #!/usr/bin/env bash
 
-  echo 'Installing UbuntuWSL specific apps'
-  packages=(
-  curl
-  wget
-  git
-  python3
-  python3-pip
-  python3-venv
-  )
-  for package in "${packages[@]}"; do
-  sudo apt install "$package" -y
-  done
-  echo 'Finished installing all applications'
+  echo 'Setting up NixWSL configuration'
+  # 1. Step
+  # 2. Step
+  # 3. Step
+  # 4. Step
+  # 5. Step
+  # 6. Step
+  echo 'Finished setting up NixWSL'
 
 # Set up git and GitHub account
 setup-github:
-  set shell := ["bash", "-c"]
   #!/usr/bin/env bash
 
   echo -e '\n Generating a new SSH key\n'
@@ -41,11 +31,9 @@ windows-util:
   echo 'Opening the best Windows Utility'
   irm christitus.com/win | iex
 
-# Install all apps using winget
-winget-install:
-  shell := ['pwsh', '-Command']
-
-  echo 'Installing applications using winget'
+# Install Windows specific apps
+installs-windows:
+  echo 'Installing all Windows specific apps'
   $applications = @(
   "BleachBit.BleachBit",
   "Discord.Discord",
@@ -69,8 +57,6 @@ winget-install:
 # Compress a video using FFmpeg
 [no-cd]
 compress:
-  shell := ['pwsh', '-Command']
-
   echo 'Compressing the video.mp4 video'
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo 'New compressed video file compressed.mp4'
@@ -78,8 +64,6 @@ compress:
 # Extract the audio from a video
 [no-cd]
 audio:
-  shell := ['pwsh', '-Command']
-
   echo 'Extacting the audio from video.mp4'
   ffmpeg -i  .\video.mp4 -vn -acodec mp3  .\audio.mp3
   echo 'The audio was extracted to audio.mp3'
