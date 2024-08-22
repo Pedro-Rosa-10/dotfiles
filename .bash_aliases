@@ -16,10 +16,6 @@ alias fetch='git fetch'
 alias pull='git pull'
 alias log='git log -1'
 
-# FFmpeg
-alias compress='ffmpeg -i $HOME/Videos/video.mp4 -vcodec libx265 -crf 28 $HOME/Videos/compressed.mp4'
-alias audio='ffmpeg -i $HOME/Videos/video.mp4 -vn -acodec mp3 $HOME/Videos/audio.mp3'
-
 # Others
 alias activate='source venv/bin/activate'
 alias ll='ls -l --color=auto'
