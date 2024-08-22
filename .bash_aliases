@@ -1,6 +1,6 @@
 # Update system
-alias supdate='sudo apt update && sudo apt upgrade -y'
-alias sclean='sudo apt autoremove && sudo apt clean && sudo apt autoclean'
+alias supdate='sudo nixos-rebuild switch --upgrade && home-manager switch --upgrade'
+alias sclean='sudo nix-collect-garbage -d && sudo nix-store --gc'
 
 # NixOS specific
 alias nrswitch='sudo nixos-rebuild switch'
