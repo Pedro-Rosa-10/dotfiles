@@ -8,7 +8,7 @@ _default:
 setup-nixwsl:
   #!/usr/bin/env bash
 
-  echo 'Setting up NixWSL configuration'
+  echo -e '\n Setting up NixWSL configuration\n'
   # Move config file to the home directory
   sudo chown nixos /etc/nixos/configuration.nix
   mkdir ~/.etc/ && mkdir ~/.etc/nixos
@@ -25,7 +25,7 @@ setup-nixwsl:
   cat ~/home.nix > ~/.config/home-manager/home.nix && rm ~/home.nix
   nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
   nix-channel --update && home-manager switch
-  echo 'Finished setting up NixWSL'
+  echo -e '\n Finished setting up NixWSL\n'
 
 # Set up git and GitHub account
 setup-github:
