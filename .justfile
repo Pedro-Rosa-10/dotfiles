@@ -10,19 +10,18 @@ setup-nixwsl:
 
   echo -e '\n Setting up NixWSL configuration\n'
   # Move config file to the home directory
-  sudo chown nixos /etc/nixos/configuration.nix
-  mkdir ~/.etc/ && mkdir ~/.etc/nixos
-  sudo mv /etc/nixos/configuration.nix ~/.etc/nixos
+  sudo chown deck /etc/nixos/configuration.nix
+  mkdir -p ~/.etc/nixos
+  sudo mv /etc/nixos/configuration.nix ~/.etc/nixos/
 
   # Download the updated configuration file
-  curl -LJO https://raw.githubusercontent.com/Pedro-Rosa-10/home/main/.etc/nixos/configuration.nix ~/
-  cat ~/configuration.nix > ~/.etc/nixos/configuration.nix && rm ~/configuration.nix
-  ln -s ~/.etc/nixos/configuration.nix /etc/nixos/configuration.nix
+  curl -LJO https://raw.githubusercontent.com/Pedro-Rosa-10/home/main/.etc/nixos/configuration.nix -o ~/.etc/nixos/configuration.nix
+  sudo ln -sf ~/.etc/nixos/configuration.nix /etc/nixos/configuration.nix
   sudo nixos-rebuild switch
 
   # Sets up home-manager with updated file
-  home-manager init && curl -LJO https://raw.githubusercontent.com/Pedro-Rosa-10/home/main/.config/home-manager/home.nix ~/
-  cat ~/home.nix > ~/.config/home-manager/home.nix && rm ~/home.nix
+  home-manager init
+  curl -LJO https://raw.githubusercontent.com/Pedro-Rosa-10/home/main/.config/home-manager/home.nix -o ~/.config/home-manager/home.nix
   nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
   nix-channel --update && home-manager switch
   echo -e '\n Finished setting up NixWSL\n'
