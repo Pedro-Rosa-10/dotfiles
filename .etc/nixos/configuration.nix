@@ -8,6 +8,42 @@
 { config, lib, pkgs, ... }:
 
 {
+  # Daily Python Script Runner
+  let
+    # Define the path to the virtual environment and the Python script
+    venvPath = "~/repos/python-automatic-routine/venv";
+    scriptPath = "~/repos/python-automatic-routine/mainapp.py";
+  in
+  {
+    systemd.services.myDailyScript = {
+      description = "Python Script Runner every 10 seconds";
+
+      # Run the service every 10 seconds
+      timerConfig = {
+        OnUnitActiveSec = "10s"; # Set the interval to 10 seconds
+        Persistent = true;
+      };
+
+      # Ensure that the script runs within the virtual environment
+      serviceConfig = {
+        ExecStart = "${venvPath}/bin/python ${scriptPath}";
+        WorkingDirectory = "${scriptPath}";
+        User = "nixos"; # Set the user that should run the script
+      };
+
+      # Ensure the service is enabled
+      wantedBy = [ "timers.target" ];
+      after = [ "network.target" ]; # Ensure the network is up before running (if needed)
+    };
+
+    # Enable the timer for the service
+    systemd.timers.myDailyScript = {
+      description = "Timer for Python Script Runner every 10 seconds";
+      wants = [ "myDailyScript.service" ];
+    };
+  }
+
+  # WSL specific configuration
   imports = [
     # include NixOS-WSL modules
     <nixos-wsl/modules>
