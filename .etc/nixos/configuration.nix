@@ -7,39 +7,39 @@
 
 { config, lib, pkgs, ... }:
 
-let
-  # Define the path to the virtual environment and the Python script
-  venvPath = "/home/nixos/repos/python-automatic-routine/venv";
-  scriptPath = "/home/nixos/repos/python-automatic-routine/mainapp.py";
-  workingDir = "/home/nixos/repos/python-automatic-routine";
-in
-
-{
-  systemd.services.myDailyScript = {
-    description = "Python Script Runner";
-
-    serviceConfig = {
-      ExecStart = "${venvPath}/bin/python ${scriptPath}";
-      WorkingDirectory = workingDir;
-      User = "nixos";
-      Restart = "always"; # Ensure the service restarts after each run
-      RestartSec = "10s"; # Delay before restarting (if needed)
-    };
-
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network.target" ];
-  };
-
-  systemd.timers.myDailyScript = {
-    description = "Timer for Python Script Runner every 10 seconds";
-    timerConfig = {
-      OnUnitActiveSec = "10s"; # Interval to trigger the service
-      Persistent = true;
-    };
-    wants = [ "myDailyScript.service" ];
-  };
+# let
+#   # Define the path to the virtual environment and the Python script
+#   venvPath = "/home/nixos/repos/python-automatic-routine/venv";
+#   scriptPath = "/home/nixos/repos/python-automatic-routine/mainapp.py";
+#   workingDir = "/home/nixos/repos/python-automatic-routine";
+# in
 
 # {
+#   systemd.services.myDailyScript = {
+#     description = "Python Script Runner";
+
+#     serviceConfig = {
+#       ExecStart = "${venvPath}/bin/python ${scriptPath}";
+#       WorkingDirectory = workingDir;
+#       User = "nixos";
+#       Restart = "always"; # Ensure the service restarts after each run
+#       RestartSec = "10s"; # Delay before restarting (if needed)
+#     };
+
+#     wantedBy = [ "multi-user.target" ];
+#     after = [ "network.target" ];
+#   };
+
+#   systemd.timers.myDailyScript = {
+#     description = "Timer for Python Script Runner every 10 seconds";
+#     timerConfig = {
+#       OnUnitActiveSec = "10s"; # Interval to trigger the service
+#       Persistent = true;
+#     };
+#     wants = [ "myDailyScript.service" ];
+#   };
+
+{
   # WSL specific configuration
   imports = [
     # include NixOS-WSL modules
