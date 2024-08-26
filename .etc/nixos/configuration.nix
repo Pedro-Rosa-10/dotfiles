@@ -7,42 +7,39 @@
 
 { config, lib, pkgs, ... }:
 
+let
+  # Define the path to the virtual environment and the Python script
+  venvPath = "/home/nixos/repos/python-automatic-routine/venv";
+  scriptPath = "/home/nixos/repos/python-automatic-routine/mainapp.py";
+  workingDir = "/home/nixos/repos/python-automatic-routine";
+in
+
 {
-  # Daily Python Script Runner
-  let
-    # Define the path to the virtual environment and the Python script
-    venvPath = "~/repos/python-automatic-routine/venv";
-    scriptPath = "~/repos/python-automatic-routine/mainapp.py";
-  in
-  {
-    systemd.services.myDailyScript = {
-      description = "Python Script Runner every 10 seconds";
+  systemd.services.myDailyScript = {
+    description = "Python Script Runner";
 
-      # Run the service every 10 seconds
-      timerConfig = {
-        OnUnitActiveSec = "10s"; # Set the interval to 10 seconds
-        Persistent = true;
-      };
-
-      # Ensure that the script runs within the virtual environment
-      serviceConfig = {
-        ExecStart = "${venvPath}/bin/python ${scriptPath}";
-        WorkingDirectory = "${scriptPath}";
-        User = "nixos"; # Set the user that should run the script
-      };
-
-      # Ensure the service is enabled
-      wantedBy = [ "timers.target" ];
-      after = [ "network.target" ]; # Ensure the network is up before running (if needed)
+    serviceConfig = {
+      ExecStart = "${venvPath}/bin/python ${scriptPath}";
+      WorkingDirectory = workingDir;
+      User = "nixos";
+      Restart = "always"; # Ensure the service restarts after each run
+      RestartSec = "10s"; # Delay before restarting (if needed)
     };
 
-    # Enable the timer for the service
-    systemd.timers.myDailyScript = {
-      description = "Timer for Python Script Runner every 10 seconds";
-      wants = [ "myDailyScript.service" ];
-    };
-  }
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+  };
 
+  systemd.timers.myDailyScript = {
+    description = "Timer for Python Script Runner every 10 seconds";
+    timerConfig = {
+      OnUnitActiveSec = "10s"; # Interval to trigger the service
+      Persistent = true;
+    };
+    wants = [ "myDailyScript.service" ];
+  };
+
+# {
   # WSL specific configuration
   imports = [
     # include NixOS-WSL modules
@@ -52,15 +49,15 @@
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
-  # System native pacages
+  # System native packages
   environment.systemPackages = with pkgs; [
     home-manager
   ];
 
   # VS Code inside WSL
   programs.nix-ld = {
-      enable = true;
-      package = pkgs.nix-ld-rs;
+    enable = true;
+    package = pkgs.nix-ld-rs;
   };
 
   # This value determines the NixOS release from which the default
