@@ -1,8 +1,9 @@
 # NixOS specific
-alias nupdate='sudo nixos-rebuild switch --upgrade && home-manager switch'
-alias nclean='sudo nix-collect-garbage -d && sudo nix-store --gc'
-alias nrswitch='sudo nixos-rebuild switch'
-alias hmswitch='home-manager switch'
+alias flakeup='nix flake update ~/.nix-config && git add -f ~/.nix-config/*'
+alias nswitch='flakeup && sudo nixos-rebuild switch --flake ~/.nix-config --use-remote-sudo'
+alias hswitch='flakeup && home-manager switch --flake ~/.nix-config'
+alias nupdate='nswitch && hswitch'
+alias nclean='sudo nix-collect-garbage --delete-older-than 5d'
 
 # Git routines
 alias status='git status'
