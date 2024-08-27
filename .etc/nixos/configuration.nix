@@ -40,6 +40,12 @@
 #   };
 
 {
+  # Enable Flakes experimental feature
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
+
   # WSL specific configuration
   imports = [
     # include NixOS-WSL modules
