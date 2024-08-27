@@ -9,17 +9,7 @@ setup-nixwsl:
   #!/usr/bin/env bash
 
   echo -e '\n Setting up NixWSL configuration\n'
-  mkdir ~/.nix-config
-  sudo chown nixos /etc/nixos/*
-  sudo mv /etc/nixos/* ~/.nix-config/
-  base_url="https://raw.githubusercontent.com/Pedro-Rosa-10/home/main/.nix-config"
-  for file in configuration.nix home.nix flake.nix; do
-    curl -LJO "$base_url/$file" -o ~/.nix-config/"$file"
-  done
-  sudo ln -sf ~/.nix-config/flake.nix /etc/nixos/
-  nix --experimental-features 'nix-command flakes' flake update ~/.nix-config
-  sudo nixos-rebuild switch --flake ~/.nix-config --use-remote-sudo
-  home-manager switch --flake ~/.nix-config
+  # Revisar pois nada que eu tentei funcionou
   echo -e '\n Finished setting up NixWSL\n'
 
 # Set up git and GitHub account
