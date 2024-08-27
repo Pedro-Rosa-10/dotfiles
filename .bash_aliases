@@ -7,7 +7,7 @@
 
 # NixOS specific (temporary)
 alias nswitch='sudo nixos-rebuild switch --use-remote-sudo'
-alias hswitch='home-manager switch'
+alias hswitch='home-manager switch -f ~/.nix-config/home.nix'
 alias nupdate='nswitch && hswitch'
 alias nclean='sudo nix-collect-garbage --delete-older-than 5d'
 
