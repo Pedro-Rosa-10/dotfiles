@@ -9,21 +9,18 @@ setup-nixwsl:
   #!/usr/bin/env bash
 
   echo -e '\n Setting up NixWSL configuration\n'
-  # Move config file to the home directory
-  sudo chown deck /etc/nixos/configuration.nix
-  mkdir -p ~/.etc/nixos
-  sudo mv /etc/nixos/configuration.nix ~/.etc/nixos/
-
-  # Download the updated configuration file
-  curl -LJO https://raw.githubusercontent.com/Pedro-Rosa-10/home/main/.etc/nixos/configuration.nix -o ~/.etc/nixos/configuration.nix
-  sudo ln -sf ~/.etc/nixos/configuration.nix /etc/nixos/configuration.nix
-  sudo nixos-rebuild switch
-
-  # Sets up home-manager with updated file
-  home-manager init
-  curl -LJO https://raw.githubusercontent.com/Pedro-Rosa-10/home/main/.config/home-manager/home.nix -o ~/.config/home-manager/home.nix
-  nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
-  nix-channel --update && home-manager switch
+  mkdir ~/.nix-config
+  sudo chown nixos /etc/nixos/*
+  sudo mv /etc/nixos/* ~/.nix-config/
+  base_url="https://raw.githubusercontent.com/Pedro-Rosa-10/home/main/.nix-config"
+  for file in configuration.nix home.nix flake.nix flake.lock; do
+    curl -LJO "$base_url/$file" -o ~/.nix-config/"$file"
+  done
+  sudo ln -sf ~/.nix-config/flake.nix /etc/nixos/
+  --experimental-features 'nix-command flakes'
+  nix flake update ~/.nix-config
+  sudo nixos-rebuild switch --flake ~/.nix-config --use-remote-sudo
+  home-manager switch --flake ~/.nix-config
   echo -e '\n Finished setting up NixWSL\n'
 
 # Set up git and GitHub account
