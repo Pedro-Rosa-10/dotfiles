@@ -17,8 +17,7 @@ setup-nixwsl:
     curl -LJO "$base_url/$file" -o ~/.nix-config/"$file"
   done
   sudo ln -sf ~/.nix-config/flake.nix /etc/nixos/
-  --experimental-features 'nix-command flakes'
-  nix flake update ~/.nix-config
+  nix --experimental-features 'nix-command flakes' flake update ~/.nix-config
   sudo nixos-rebuild switch --flake ~/.nix-config --use-remote-sudo
   home-manager switch --flake ~/.nix-config
   echo -e '\n Finished setting up NixWSL\n'
