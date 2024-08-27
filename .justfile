@@ -13,7 +13,7 @@ setup-nixwsl:
   sudo chown nixos /etc/nixos/*
   sudo mv /etc/nixos/* ~/.nix-config/
   base_url="https://raw.githubusercontent.com/Pedro-Rosa-10/home/main/.nix-config"
-  for file in configuration.nix home.nix flake.nix flake.lock; do
+  for file in configuration.nix home.nix flake.nix; do
     curl -LJO "$base_url/$file" -o ~/.nix-config/"$file"
   done
   sudo ln -sf ~/.nix-config/flake.nix /etc/nixos/
