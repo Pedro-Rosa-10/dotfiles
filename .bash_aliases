@@ -15,5 +15,5 @@ alias pull='git pull'
 alias log='git log -1'
 
 # Others
-alias activate='source venv/bin/activate'
+alias activate='source venv/Scripts/activate'
 alias ll='ls -l --color=auto'
