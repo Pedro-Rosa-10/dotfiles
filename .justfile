@@ -8,9 +8,19 @@ _default:
 setup-nixwsl:
   #!/usr/bin/env bash
 
-  echo -e '\n Setting up NixWSL configuration\n'
-  # Revisar pois nada que eu tentei funcionou
-  echo -e '\n Finished setting up NixWSL\n'
+  echo -e '\n Installing all NixOS apps\n'
+  sudo chown nixos /etc/nixos/*
+  mkdir ~/.nix-config
+  sudo mv /etc/nixos/* ~/.nix-config/
+  for file in configuration.nix flake.lock flake.nix home.nix; do
+    curl -LJO https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/$file -o ~/.nix-config/$file
+  done
+  sudo ln -sf ~/.nix-config/configuration.nix /etc/nixos/
+  sudo ln -sf ~/.nix-config/flake.nix /etc/nixos/
+  sudo rm /etc/nixos/configuration.nix
+  nix flake update ~/.nix-config
+  sudo nixos-rebuild switch --flake ~/.nix-config
+  echo -e '\n All NixOS apps have been installed\n'
 
 # Set up git and GitHub account
 setup-github:
