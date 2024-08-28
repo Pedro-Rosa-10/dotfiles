@@ -27,9 +27,9 @@
     wget
     git
     fastfetch
-    python3
-    python-launcher
-    python311Packages.pip
+    # python3
+    # python-launcher
+    # python311Packages.pip
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

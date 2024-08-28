@@ -3,7 +3,7 @@ alias flakeup='nix flake update ~/.nix-config && git add -f ~/.nix-config/*'
 alias nswitch='sudo nixos-rebuild switch --flake ~/.nix-config'
 alias hswitch='home-manager switch --flake ~/.nix-config'
 alias nupdate='flakeup && nswitch && hswitch'
-alias nclean='sudo nix-collect-garbage' # --delete-older-than 1d'
+alias nclean='sudo nix-collect-garbage -d' # --delete-older-than 1d'
 
 # Git routines
 alias status='git status'
