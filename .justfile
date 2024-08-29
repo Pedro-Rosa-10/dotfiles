@@ -18,6 +18,21 @@ compress:
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo 'New compressed video file compressed.mp4'
 
+# Install all Debian WSL specific apps
+installs-debianwsl:
+  #!/usr/bin/env bash
+
+  echo -e '\n Installing all Debian WSL apps\n'
+  sudo apt update
+  sudo apt upgrade -y
+  sudo apt install xz-utils curl git wget -y
+  mv ~/.bashrc ~/.bashrc.old
+  curl -LJO https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.bashrc
+  source ~/.bashrc
+  install_just
+  just installs-nix
+  echo -e '\n Finished installing all Debian WSL apps\n'
+
 # Install the Nix Package Manager
 installs-nix:
   #!/usr/bin/env bash
