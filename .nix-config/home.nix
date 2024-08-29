@@ -9,8 +9,8 @@
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "nixos";
-  home.homeDirectory = "/home/nixos";
+  home.username = "krauzer";
+  home.homeDirectory = "/home/krauzer";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -26,11 +26,8 @@
   home.packages = with pkgs; [
     wget
     git
-    fastfetch
-    python3
-    python-launcher
-    python311Packages.pip
-
+    ffmpeg
+    mangohud
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -78,7 +75,7 @@
   #
   # or
   #
-  #  /etc/profiles/per-user/nixos/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/krauzer/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
@@ -86,4 +83,5 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
 }
