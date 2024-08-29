@@ -1,8 +1,8 @@
 # NixOS specific
-alias flakeup='nix flake update --flake ~/.nix-config && git add -f ~/.nix-config/*'
-alias nswitch='sudo nixos-rebuild switch --flake ~/.nix-config'
+alias flakeup='nix flake update --flake ~/.nix-config'
+alias lockup='git add -f ~/.nix-config/*'
 alias hswitch='home-manager switch --flake ~/.nix-config'
-alias nupdate='flakeup && nswitch && hswitch'
+alias nupdate='flakeup && lockup && hswitch'
 alias nclean='sudo nix-collect-garbage -d' # --delete-older-than 1d'
 
 # Git routines
