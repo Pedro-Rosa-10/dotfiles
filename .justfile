@@ -13,16 +13,14 @@ installs-nix:
   . /home/krauzer/.nix-profile/etc/profile.d/nix.sh
   mkdir ~/.nix-config
   for file in flake.lock flake.nix home.nix; do
-    curl -LJO https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/$file -o ~/.nix-config/$file
+    curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/$file -o ~/.nix-config/$file
   done
   nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
   nix-channel --update
   nix-shell '<home-manager>' -A install
   home-manager switch -f ~/.nix-config/home.nix
-  nix flake update ~/.nix-config
+  nix flake update --flake ~/.nix-config
   home-manager switch --flake ~/.nix-config
-  nix flake update ~/
-  home-manager switch --flake ~/
   echo -e '\n Finished installing the Nix Package Manager\n'
 
 # Set up git and GitHub account
