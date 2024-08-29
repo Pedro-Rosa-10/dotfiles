@@ -26,8 +26,7 @@
   home.packages = with pkgs; [
     wget
     git
-    ffmpeg
-    mangohud
+    fastfetch
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
