@@ -9,7 +9,6 @@ installs-nix:
   #!/usr/bin/env bash
 
   echo -e '\n Installing Nix Package Manager\n'
-  sudo apt install xz-utils curl -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . /home/krauzer/.nix-profile/etc/profile.d/nix.sh
   mkdir ~/.nix-config
