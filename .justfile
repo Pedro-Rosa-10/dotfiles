@@ -4,7 +4,7 @@ set shell := ["powershell.exe", "-c"]
 _default:
   just --list
 
-# Sets up NixWSL config files
+# Install the Nix Package Manager
 setup-nixwsl:
   #!/usr/bin/env bash
 
@@ -32,7 +32,7 @@ setup-github:
   cat ~/.ssh/id_ed25519.pub
   echo -e '\n Paste it into a new SSH key: https://github.com/settings/keys\n'
 
-# Chris Titus' best Windows Utility
+# Chris Titus' Windows Utility
 windows-util:
   echo 'Opening the best Windows Utility'
   irm christitus.com/win | iex
