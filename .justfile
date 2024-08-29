@@ -5,14 +5,14 @@ _default:
   just --list
 
 # Install the Nix Package Manager
-setup-nixwsl:
+installs-nix:
   #!/usr/bin/env bash
 
   echo -e '\n Installing all NixOS apps\n'
   sudo chown nixos /etc/nixos/*
   mkdir ~/.nix-config
   sudo mv /etc/nixos/* ~/.nix-config/
-  for file in configuration.nix flake.lock flake.nix home.nix; do
+  for file in flake.lock flake.nix home.nix; do
     curl -LJO https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/$file -o ~/.nix-config/$file
   done
   sudo ln -sf ~/.nix-config/configuration.nix /etc/nixos/
