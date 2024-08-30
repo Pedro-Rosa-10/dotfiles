@@ -20,15 +20,5 @@
           ./home.nix
         ];
       };
-      # Enable direnv
-      devShells.x86_64-linux.default = pkgs.mkShell {
-        packages = with pkgs ;[
-          # direnv
-        ];
-        # Environment variables
-        shellHook = ''
-          export HOME=/home/krauzer
-        '';
-      };
     };
 }
