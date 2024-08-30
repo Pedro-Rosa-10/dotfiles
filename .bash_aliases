@@ -1,7 +1,7 @@
 # NixOS specific
-alias flakeup='nix flake update --flake ~/.nix'
-alias lockup='git add -f ~/.nix/*'
-alias hswitch='home-manager switch --flake ~/.nix'
+alias flakeup='nix flake update --flake ~/.nix-config'
+alias lockup='git add -f ~/.nix-config/*'
+alias hswitch='home-manager switch --flake ~/.nix-config'
 alias nupdate='flakeup && lockup && hswitch'
 alias nclean='nix-collect-garbage -d' # --delete-older-than 1d'
 alias wclean='find ~/ -type f -name "*.Identifier" -delete'
