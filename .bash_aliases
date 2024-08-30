@@ -4,6 +4,7 @@ alias lockup='git add -f ~/.nix/*'
 alias hswitch='home-manager switch --flake ~/.nix'
 alias nupdate='flakeup && lockup && hswitch'
 alias nclean='nix-collect-garbage -d' # --delete-older-than 1d'
+alias wclean='find ~/ -type f -name "*.Identifier" -delete'
 
 # Git routines
 alias status='git status'
