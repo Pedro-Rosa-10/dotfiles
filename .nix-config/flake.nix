@@ -20,13 +20,10 @@
           ./home.nix
         ];
       };
-      # Direnv
+      # Enable direnv
       devShells.x86_64-linux.default = pkgs.mkShell {
         packages = with pkgs ;[
-          # https://search.nixos.org/packages
-          direnv
-          # make
-          # gitea
+          # direnv
         ];
         # Environment variables
         shellHook = ''

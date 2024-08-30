@@ -21,9 +21,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Enable Direnv
-eval "$(direnv hook bash)"
-
 # paste.rs
 function paste() {
     echo ""
