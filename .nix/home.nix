@@ -16,7 +16,9 @@
 
   # https://search.nixos.org/packages
   home.packages = with pkgs; [
-    fastfetch
+    git
+    wget
+    openssh
     # hello
   ];
 
