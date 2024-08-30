@@ -27,16 +27,16 @@ installs-nix:
   sudo apt install xz-utils git wget -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . /home/krauzer/.nix-profile/etc/profile.d/nix.sh
-  mkdir ~/.nix-config
+  mkdir ~/.nix
   for file in flake.lock flake.nix home.nix; do
-    curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/$file -o ~/.nix-config/$file
+    curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix/$file -o ~/.nix/$file
   done
   nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
   nix-channel --update
   nix-shell '<home-manager>' -A install
-  home-manager switch -f ~/.nix-config/home.nix
-  nix flake update --flake ~/.nix-config
-  home-manager switch --flake ~/.nix-config
+  home-manager switch -f ~/.nix/home.nix
+  nix flake update --flake ~/.nix
+  home-manager switch --flake ~/.nix
   echo -e '\n Finished installing the Nix Package Manager\n'
 
 # Install Windows specific apps
