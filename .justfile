@@ -24,11 +24,11 @@ installs-nix:
 
   echo -e '\n Installing Nix Package Manager\n'
   sudo apt upgrade -y
-  sudo apt install xz-utils git wget -y
+  sudo apt install xz-utils git openssh-client -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . /home/krauzer/.nix-config-profile/etc/profile.d/nix.sh
   mkdir ~/.nix-config
-  for file in flake.lock flake.nix-config home.nix-config; do
+  for file in flake.lock flake.nix home.nix; do
     curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/$file -o ~/.nix-config/$file
   done
   nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
