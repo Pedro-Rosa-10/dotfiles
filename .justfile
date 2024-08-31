@@ -34,7 +34,7 @@ installs-nix:
   nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
   nix-channel --update
   nix-shell '<home-manager>' -A install
-  home-manager switch -f ~/.nix-config/home.nix-config
+  home-manager switch -f ~/.nix-config/home.nix
   nix flake update --flake ~/.nix-config
   home-manager switch --flake ~/.nix-config
   echo -e '\n Finished installing the Nix Package Manager\n'
