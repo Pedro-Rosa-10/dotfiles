@@ -61,6 +61,20 @@ installs-windows:
   }
   echo 'Finished installing all Windows apps'
 
+# Set up the Flakes Nix module
+[no-cd]
+setup-flakes:
+  #!/usr/bin/env bash
+
+  echo -e '\n Setting up the Flakes Nix module\n'
+  sh <(curl -L https://nixos.org/nix/install) --no-daemon
+  . $HOME/.nix-profile/etc/profile.d/nix.sh
+  mkdir -p ~/.config/nix
+  echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
+  nix flake update --flake .nix-flake
+  nix develop .nix-flake
+  echo -e "\n Finished setting up the Flakes Nix module\n"
+
 # Set up git and GitHub account
 setup-github:
   #!/usr/bin/env bash
