@@ -10,5 +10,6 @@ alias log='git log -1'
 # Others
 alias aliases='cat ~/.bash_aliases'
 alias ll='ls -l --color=auto'
-alias activate='source venv/Scripts/activate'
+alias wactivate='source venv/Scripts/activate'
+alias lactivate='source venv/bin/activate'
 alias wclean='find ~/ -type f -name "*.Identifier" -delete'
