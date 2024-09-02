@@ -25,7 +25,7 @@ installs-nix:
   echo -e '\n Installing Nix Package Manager\n'
   sudo apt install xz-utils -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
-  . $HOME/.nix-config-profile/etc/profile.d/nix.sh
+  . /home/krauzer/.nix-config-profile/etc/profile.d/nix.sh
   mkdir -p ~/.nix-config
   for file in flake.lock flake.nix home.nix; do
     curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/$file -o ~/.nix-config/$file
