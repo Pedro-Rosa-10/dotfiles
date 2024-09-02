@@ -23,8 +23,7 @@ installs-nix:
   #!/usr/bin/env bash
 
   echo -e '\n Installing Nix Package Manager\n'
-  sudo apt update && sudo apt upgrade -y
-  sudo apt install git openssh-client xz-utils -y
+  sudo apt install xz-utils -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . $HOME/.nix-config-profile/etc/profile.d/nix.sh
   mkdir -p ~/.nix-config
@@ -35,7 +34,6 @@ installs-nix:
   nix-channel --update
   nix-shell '<home-manager>' -A install
   home-manager switch -f ~/.nix-config/home.nix
-  nix flake update --flake ~/.nix-config
   echo -e '\n Finished installing the Nix Package Manager\n'
 
 # Install Windows specific apps
@@ -67,11 +65,11 @@ setup-flakes:
   #!/usr/bin/env bash
 
   echo -e '\n Setting up the Flakes Nix module\n'
+  sudo apt install xz-utils -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . $HOME/.nix-profile/etc/profile.d/nix.sh
   mkdir -p ~/.config/nix
   echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
-  nix flake update --flake .nix-flake
   nix develop .nix-flake
   echo -e "\n Finished setting up the Flakes Nix module\n"
 
@@ -80,6 +78,7 @@ setup-github:
   #!/usr/bin/env bash
 
   echo -e '\n Generating a new SSH key\n'
+  sudo apt install openssh-client -y
   ssh-keygen -t ed25519 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
   echo -e '\n Copy the newly created key\n'
   cat ~/.ssh/id_ed25519.pub
