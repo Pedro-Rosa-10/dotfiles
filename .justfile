@@ -18,22 +18,30 @@ compress:
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo 'New compressed video file compressed.mp4'
 
+# Install the Home Manager module
+installs-hm:
+  #!/usr/bin/env bash
+
+  echo -e '\n Installing Home Manager module\n'
+  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/home.nix -o ~/.nix-config 
+  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
+  nix-shell '<home-manager>' -A install
+  home-manager switch -f ~/.nix-config/home.nix
+  echo -e '\n Finished installing the Home Manager module\n'
+
 # Install the Nix Package Manager
 installs-nix:
   #!/usr/bin/env bash
 
   echo -e '\n Installing Nix Package Manager\n'
-  sudo apt install xz-utils -y
+  sudo apt install xz-utils openssh-client -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . $HOME/.nix-profile/etc/profile.d/nix.sh
   mkdir -p ~/.nix-config
-  for file in flake.lock flake.nix home.nix; do
+  for file in flake.lock flake.nix; do
     curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/$file -o ~/.nix-config/$file
   done
-  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-  nix-channel --update
-  nix-shell '<home-manager>' -A install
-  home-manager switch -f ~/.nix-config/home.nix
   echo -e '\n Finished installing the Nix Package Manager\n'
 
 # Install Windows specific apps
@@ -78,7 +86,6 @@ setup-github:
   #!/usr/bin/env bash
 
   echo -e '\n Generating a new SSH key\n'
-  sudo apt install openssh-client -y
   ssh-keygen -t ed25519 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
   echo -e '\n Copy the newly created key\n'
   cat ~/.ssh/id_ed25519.pub
