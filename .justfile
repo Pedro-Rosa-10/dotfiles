@@ -35,7 +35,7 @@ installs-nix:
   #!/usr/bin/env bash
 
   echo -e '\n Installing Nix Package Manager\n'
-  sudo apt install xz-utils -y
+  sudo apt install xz-utils openssh-client -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . $HOME/.nix-profile/etc/profile.d/nix.sh
   mkdir -p ~/.nix-config
@@ -86,7 +86,6 @@ setup-github:
   #!/usr/bin/env bash
 
   echo -e '\n Generating a new SSH key\n'
-  sudo apt install openssh-client -y
   ssh-keygen -t ed25519 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
   echo -e '\n Copy the newly created key\n'
   cat ~/.ssh/id_ed25519.pub
