@@ -23,7 +23,7 @@ installs-hm:
   #!/usr/bin/env bash
 
   echo -e '\n Installing Home Manager module\n'
-  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/home.nix -o ~/.nix-config 
+  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/home.nix -o ~/.nix-config/home.nix
   nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
   nix-channel --update
   nix-shell '<home-manager>' -A install
