@@ -1,11 +1,3 @@
-# NixOS specific
-alias flakeup='nix flake update --flake ~/.nix-config'
-alias lockup='git add -f ~/.nix-config/*'
-alias hswitch='home-manager switch --flake ~/.nix-config'
-alias nupdate='flakeup && lockup && hswitch'
-alias nclean='nix-collect-garbage -d' # --delete-older-than 1d'
-alias wclean='find ~/ -type f -name "*.Identifier" -delete'
-
 # Git routines
 alias status='git status'
 alias add0='git add .'
@@ -19,3 +11,4 @@ alias log='git log -1'
 alias aliases='cat ~/.bash_aliases'
 alias ll='ls -l --color=auto'
 alias activate='source venv/Scripts/activate'
+alias wclean='find ~/ -type f -name "*.Identifier" -delete'
