@@ -23,11 +23,11 @@ installs-nix:
   #!/usr/bin/env bash
 
   echo -e '\n Installing Nix Package Manager\n'
-  sudo apt upgrade -y
-  sudo apt install xz-utils git openssh-client -y
+  sudo apt update && sudo apt upgrade -y
+  sudo apt install git openssh-client xz-utils -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
-  . /home/krauzer/.nix-config-profile/etc/profile.d/nix.sh
-  mkdir ~/.nix-config
+  . $HOME/.nix-config-profile/etc/profile.d/nix.sh
+  mkdir -p ~/.nix-config
   for file in flake.lock flake.nix home.nix; do
     curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/$file -o ~/.nix-config/$file
   done
@@ -36,7 +36,6 @@ installs-nix:
   nix-shell '<home-manager>' -A install
   home-manager switch -f ~/.nix-config/home.nix
   nix flake update --flake ~/.nix-config
-  home-manager switch --flake ~/.nix-config
   echo -e '\n Finished installing the Nix Package Manager\n'
 
 # Install Windows specific apps
