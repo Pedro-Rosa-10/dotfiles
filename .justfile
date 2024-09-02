@@ -18,32 +18,6 @@ compress:
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo 'New compressed video file compressed.mp4'
 
-# Install the Home Manager module
-installs-hm:
-  #!/usr/bin/env bash
-
-  echo -e '\n Installing Home Manager module\n'
-  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/home.nix -o ~/.nix-config/home.nix
-  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-  nix-channel --update
-  nix-shell '<home-manager>' -A install
-  home-manager switch -f ~/.nix-config/home.nix
-  echo -e '\n Finished installing the Home Manager module\n'
-
-# Install the Nix Package Manager
-installs-nix:
-  #!/usr/bin/env bash
-
-  echo -e '\n Installing Nix Package Manager\n'
-  sudo apt install xz-utils openssh-client -y
-  sh <(curl -L https://nixos.org/nix/install) --no-daemon
-  . $HOME/.nix-profile/etc/profile.d/nix.sh
-  mkdir -p ~/.nix-config
-  for file in flake.lock flake.nix; do
-    curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/$file -o ~/.nix-config/$file
-  done
-  echo -e '\n Finished installing the Nix Package Manager\n'
-
 # Install Windows specific apps
 installs-windows:
   echo 'Installing all Windows specific apps'
@@ -66,20 +40,6 @@ installs-windows:
   winget install --id=$app -e
   }
   echo 'Finished installing all Windows apps'
-
-# Set up the Flakes Nix module
-[no-cd]
-setup-flakes:
-  #!/usr/bin/env bash
-
-  echo -e '\n Setting up the Flakes Nix module\n'
-  sudo apt install xz-utils -y
-  sh <(curl -L https://nixos.org/nix/install) --no-daemon
-  . $HOME/.nix-profile/etc/profile.d/nix.sh
-  mkdir -p ~/.config/nix
-  echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
-  nix develop .nix-flake
-  echo -e "\n Finished setting up the Flakes Nix module\n"
 
 # Set up git and GitHub account
 setup-github:
