@@ -17,14 +17,15 @@
   # https://search.nixos.org/packages
   home.packages = with pkgs; [
     wget
+    direnv
     # hello
   ];
 
   # https://nixos.wiki/wiki/Home_Manager#Managing_your_dotfiles
-  home.file = { };
+  home.file = {};
 
   # https://mynixos.com/home-manager/option/home.sessionVariables
-  home.sessionVariables = { };
+  home.sessionVariables = {};
 
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
