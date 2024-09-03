@@ -1,12 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Enable Flakes experimental feature
-  nix = {
-    package = pkgs.nix;
-    settings.experimental-features = [ "nix-command" "flakes" ];
-  };
-
   # User information and paths
   home.username = "krauzer";
   home.homeDirectory = "/home/krauzer";
