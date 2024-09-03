@@ -51,6 +51,25 @@ setup-github:
   cat ~/.ssh/id_ed25519.pub
   echo -e '\n Paste it into a new SSH key: https://github.com/settings/keys\n'
 
+# Set up the Nix Package Manager
+setup-nixpm:
+  #!/usr/bin/env bash
+
+  echo -e '\n Setting up the Nix Package Manager\n'
+  sudo apt install xz-utils openssh-client -y
+  sh <(curl -L https://nixos.org/nix/install) --no-daemon
+  . $HOME/.nix-profile/etc/profile.d/nix.sh
+  mkdir -p ~/.nix-config
+  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/home.nix -o ~/.nix-config/home.nix
+  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
+  nix-shell '<home-manager>' -A install
+  home-manager init
+  rm ~/.config/home-manager/home.nix
+  sudo ln -sf ~/.nix-config/home.nix ~/.config/home-manager
+  home-manager switch
+  echo -e "\n Finished setting up the Nix Package Manager\n"
+
 # Chris Titus' Windows Utility
 windows-util:
   echo 'Opening the best Windows Utility'
