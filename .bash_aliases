@@ -1,3 +1,8 @@
+# Nix specific
+alias hupdate='home-manager switch'
+alias nclean='nix-collect-garbage -d'
+alias wclean='find ~/ -type f -name "*.Identifier" -delete'
+
 # Git routines
 alias status='git status'
 alias add0='git add .'
