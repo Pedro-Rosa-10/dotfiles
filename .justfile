@@ -23,7 +23,7 @@ installs-nixos:
   #!/usr/bin/env bash
 
   echo -e '\n Installing all NixOS apps\n'
-  sudo chown deck /etc/nixos/*
+  sudo chown nixos /etc/nixos/*
   mkdir -p ~/.nix-config
   sudo mv /etc/nixos/* ~/.nix-config
   curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/configuration.nix -o ~/.nix-config/configuration.nix
