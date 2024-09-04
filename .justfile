@@ -23,6 +23,8 @@ installs-nixos:
   #!/usr/bin/env bash
 
   echo -e '\n Installing all NixOS apps\n'
+  mkdir -p ~/.config/nix
+  echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
   sudo rm /etc/nixos/*
   sudo ln -sf ~/.flake/flake.nix /etc/nixos
   sudo nixos-rebuild switch --flake ~/.flake
@@ -67,6 +69,8 @@ setup-nixpm:
   #!/usr/bin/env bash
 
   echo -e '\n Setting up the Nix Package Manager\n'
+  mkdir -p ~/.config/nix
+  echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
   sudo apt install curl xz-utils openssh-client -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . $HOME/.nix-profile/etc/profile.d/nix.sh
