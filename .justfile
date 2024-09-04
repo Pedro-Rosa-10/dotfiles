@@ -25,8 +25,6 @@ installs-nixos:
   echo -e '\n Installing all NixOS apps\n'
   mkdir -p ~/.config/nix
   echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
-  sudo rm /etc/nixos/*
-  sudo ln -sf ~/.flake/flake.nix /etc/nixos
   sudo nixos-rebuild switch --flake ~/.flake
   nix run home-manager/master -- switch --flake ~/.flake
   echo -e '\n Finished installing all NixOS apps\n'
