@@ -23,12 +23,10 @@ installs-nixos:
   #!/usr/bin/env bash
 
   echo -e '\n Installing all NixOS apps\n'
-  sudo chown nixos /etc/nixos/*
-  mkdir -p ~/.nix-config
-  sudo mv /etc/nixos/* ~/.nix-config
-  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/configuration.nix -o ~/.nix-config/configuration.nix
-  sudo ln -sf ~/.nix-config/configuration.nix /etc/nixos
-  sudo nixos-rebuild switch
+  sudo rm /etc/nixos/*
+  sudo ln -sf ~/.flake/flake.nix /etc/nixos
+  sudo nixos-rebuild switch --flake ~/.flake
+  nix run home-manager/master -- switch --flake ~/.flake
   echo -e '\n Finished installing all NixOS apps\n'
 
 # Install Windows specific apps
@@ -72,15 +70,7 @@ setup-nixpm:
   sudo apt install xz-utils openssh-client -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . $HOME/.nix-profile/etc/profile.d/nix.sh
-  mkdir -p ~/.nix-config
-  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/home.nix -o ~/.nix-config/home.nix
-  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-  nix-channel --update
-  nix-shell '<home-manager>' -A install
-  home-manager init
-  rm ~/.config/home-manager/home.nix
-  sudo ln -sf ~/.nix-config/home.nix ~/.config/home-manager
-  home-manager switch
+  nix run home-manager/master -- switch --flake ~/.flake
   echo -e "\n Finished setting up the Nix Package Manager\n"
 
 # Chris Titus' Windows Utility
