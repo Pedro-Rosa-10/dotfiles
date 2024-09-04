@@ -67,7 +67,7 @@ setup-nixpm:
   #!/usr/bin/env bash
 
   echo -e '\n Setting up the Nix Package Manager\n'
-  sudo apt install xz-utils openssh-client -y
+  sudo apt install curl xz-utils openssh-client -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . $HOME/.nix-profile/etc/profile.d/nix.sh
   nix run home-manager/master -- switch --flake ~/.flake
