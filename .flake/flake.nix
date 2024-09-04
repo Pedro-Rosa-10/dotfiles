@@ -22,7 +22,7 @@
         nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             modules = [
-            # Import the WSL module
+            # nixos(wsl)@nixos
             (import "${nixos-wsl}/modules")
                 {
                     wsl.enable = true;
@@ -40,7 +40,7 @@
                 }
             ];
         };
-        # NixOS on WSL Home Manager configuration
+        # nixos(wsl)@nixos
         homeConfigurations."nixos@nixos" = home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             modules = [
@@ -50,6 +50,7 @@
                     home.stateVersion = "23.11";
                     # System packages https://search.nixos.org/packages
                     home.packages = with pkgs; [
+                        just
                         wget
                         git
                         fastfetch
@@ -58,7 +59,7 @@
                 }
             ];
         };
-        # Debian on WSL Home Manager configuration
+        # debian(wsl)@POAN23090675
         homeConfigurations."krauzer@POAN23090675" = home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             modules = [
@@ -68,6 +69,7 @@
                     home.stateVersion = "23.11";
                     # System packages https://search.nixos.org/packages
                     home.packages = with pkgs; [
+                        just
 						wget
 						git
 						direnv
