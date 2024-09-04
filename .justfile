@@ -18,6 +18,19 @@ compress:
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo 'New compressed video file compressed.mp4'
 
+# Install NixOS specific apps
+installs-nixos:
+  #!/usr/bin/env bash
+
+  echo -e '\n Installing all NixOS apps\n'
+  sudo chown deck /etc/nixos/*
+  mkdir -p ~/.nix-config
+  sudo mv /etc/nixos/* ~/.nix-config
+  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/configuration.nix -o ~/.nix-config/configuration.nix
+  sudo ln -sf ~/.nix-config/configuration.nix /etc/nixos
+  sudo nixos-rebuild switch
+  echo -e '\n Finished installing all NixOS apps\n'
+
 # Install Windows specific apps
 installs-windows:
   echo 'Installing all Windows specific apps'
