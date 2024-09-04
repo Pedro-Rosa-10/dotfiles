@@ -1,4 +1,5 @@
 # Nix specific
+alias nupdate='sudo nixos-rebuild switch --upgrade'
 alias hupdate='home-manager switch'
 alias nclean='nix-collect-garbage -d'
 alias wclean='find ~/ -type f -name "*.Identifier" -delete'
