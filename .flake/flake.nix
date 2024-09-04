@@ -62,7 +62,7 @@
             just
             direnv
             fastfetch
-	    wget
+	          wget
           ];
           programs.home-manager.enable = true;
         }
