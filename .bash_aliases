@@ -1,6 +1,10 @@
+# Flake specific
+alias flakeup='nix flake update --flake ~/.flake'
+alias lockup='git add -f ~/.flake/*'
+
 # Nix specific
-alias nupdate='sudo nixos-rebuild switch --flake .flake'
-alias hupdate='home-manager switch --flake .flake'
+alias nupdate='flakeup && lockup && sudo nixos-rebuild switch --flake ~/.flake'
+alias hupdate='flakeup && lockup && home-manager switch --flake ~/.flake'
 alias nclean='nix-collect-garbage -d'
 alias wclean='find ~/ -type f -name "*.Identifier" -delete'
 
