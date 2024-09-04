@@ -72,15 +72,11 @@ setup-nixpm:
   sudo apt install xz-utils openssh-client -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . $HOME/.nix-profile/etc/profile.d/nix.sh
-  mkdir -p ~/.nix-config
-  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/home.nix -o ~/.nix-config/home.nix
-  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-  nix-channel --update
-  nix-shell '<home-manager>' -A install
-  home-manager init
-  rm ~/.config/home-manager/home.nix
-  sudo ln -sf ~/.nix-config/home.nix ~/.config/home-manager
-  home-manager switch
+  mkdir -p ~/.config/nix
+  echo 'experimental-features = nix-command flakes' >> ~/.config/nix/nix.conf
+  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.flake/flake.nix -o ~/.flake
+  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.flake/flake.lock -o ~/.flake
+  nix run home-manager/master -- switch --flake ~/.flake
   echo -e "\n Finished setting up the Nix Package Manager\n"
 
 # Chris Titus' Windows Utility
