@@ -23,12 +23,12 @@ installs-nixos:
   #!/usr/bin/env bash
 
   echo -e '\n Installing all NixOS apps\n'
-  sudo chown nixos /etc/nixos/*
-  mkdir -p ~/.nix-config
-  sudo mv /etc/nixos/* ~/.nix-config
-  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.nix-config/configuration.nix -o ~/.nix-config/configuration.nix
-  sudo ln -sf ~/.nix-config/configuration.nix /etc/nixos
-  sudo nixos-rebuild switch
+  mkdir -p ~/.config/nix
+  echo 'experimental-features = nix-command flakes' >> ~/.config/nix/nix.conf
+  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.flake/flake.nix -o ~/.flake
+  curl -L https://raw.githubusercontent.com/Pedro-Rosa-10/dotfiles/main/.flake/flake.lock -o ~/.flake
+  sudo nixos-rebuild switch --flake ~/.flake
+  nix run home-manager/master -- switch --flake ~/.flake
   echo -e '\n Finished installing all NixOS apps\n'
 
 # Install Windows specific apps
