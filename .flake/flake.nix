@@ -30,6 +30,18 @@
             package = pkgs.nix-ld-rs;
           };
           system.stateVersion = "24.05";
+          # Periodic garbage collection
+          systemd.timers.nix-gc = {
+            enable = true;
+            timerConfig.OnCalendar = "hourly";
+            timerConfig.Persistent = true;
+          };
+          # Nix store optimization
+          systemd.timers.nix-optimise = {
+            enable = true;
+            timerConfig.OnCalendar = "hourly";
+            timerConfig.Persistent = true;
+          };
         }
       ];
     };
