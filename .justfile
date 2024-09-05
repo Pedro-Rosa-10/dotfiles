@@ -69,7 +69,6 @@ setup-nixpm:
   echo -e '\n Setting up the Nix Package Manager\n'
   mkdir -p ~/.config/nix
   echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
-  sudo apt install curl xz-utils openssh-client -y
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . $HOME/.nix-profile/etc/profile.d/nix.sh
   nix run home-manager/master -- switch --flake ~/.flake
