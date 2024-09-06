@@ -18,6 +18,7 @@
       system = "x86_64-linux";
       modules = [
         (import "${nixos-wsl}/modules") {
+          nix.settings.experimental-features = [ "nix-command" "flakes" ];
           wsl.enable = true;
           wsl.defaultUser = "nixos";
           environment.systemPackages = with pkgs; [
