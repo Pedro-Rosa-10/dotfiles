@@ -1,9 +1,3 @@
-# Nix specific
-alias nupdate='sudo nixos-rebuild switch --flake ~/.flake && hupdate'
-alias hupdate='home-manager switch --flake ~/.flake'
-alias nclean='nix-collect-garbage -d'
-alias wclean='find ~/ -type f -name "*.Identifier" -delete'
-
 # Git routines
 alias status='git status'
 alias add0='git add .'

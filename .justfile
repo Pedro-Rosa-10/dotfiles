@@ -18,17 +18,6 @@ compress:
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo 'New compressed video file compressed.mp4'
 
-# Install NixOS specific apps
-installs-nixos:
-  #!/usr/bin/env bash
-
-  echo -e '\n Installing all NixOS apps\n'
-  mkdir -p ~/.config/nix
-  echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
-  sudo nixos-rebuild switch --flake ~/.flake
-  nix run home-manager/master -- switch --flake ~/.flake
-  echo -e '\n Finished installing all NixOS apps\n'
-
 # Install Windows specific apps
 installs-windows:
   echo 'Installing all Windows specific apps'
@@ -61,18 +50,6 @@ setup-github:
   echo -e '\n Copy the newly created key\n'
   cat ~/.ssh/id_ed25519.pub
   echo -e '\n Paste it into a new SSH key: https://github.com/settings/keys\n'
-
-# Set up the Nix Package Manager
-setup-nixpm:
-  #!/usr/bin/env bash
-
-  echo -e '\n Setting up the Nix Package Manager\n'
-  mkdir -p ~/.config/nix
-  echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
-  sh <(curl -L https://nixos.org/nix/install) --no-daemon
-  . $HOME/.nix-profile/etc/profile.d/nix.sh
-  nix run home-manager/master -- switch --flake ~/.flake
-  echo -e "\n Finished setting up the Nix Package Manager\n"
 
 # Chris Titus' Windows Utility
 windows-util:
