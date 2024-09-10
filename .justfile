@@ -45,11 +45,11 @@ installs-windows:
 installs-wsl:
   #!/usr/bin/env bash
 
-  echo 'Installing all Windows specific apps'
+  echo 'Installing all WSL specific apps'
   sudo apt update
   sudo apt upgrade -y
   sudo apt install distrobox podman -y
-  echo 'Finished installing all Windows apps'
+  echo 'Finished installing all WSL apps'
 
 # Set up git and GitHub account
 setup-github:
