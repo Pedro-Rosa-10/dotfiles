@@ -1,3 +1,7 @@
+# Ubuntu specific
+alias uupdate='sudo apt update && sudo apt upgrade -y'
+alias uclean='sudo autoremove --purge'
+
 # Git routines
 alias status='git status'
 alias add0='git add .'
