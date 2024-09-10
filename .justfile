@@ -41,6 +41,17 @@ installs-windows:
   }
   echo 'Finished installing all Windows apps'
 
+# Install WSL specific apps
+installs-wsl:
+  #!/usr/bin/env bash
+
+  echo 'Installing all Windows specific apps'
+  sudo apt update
+  sudo apt upgrade -y
+  sudo apt install podman -y
+  curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh
+  echo 'Finished installing all Windows apps'
+
 # Set up git and GitHub account
 setup-github:
   #!/usr/bin/env bash
