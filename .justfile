@@ -48,8 +48,7 @@ installs-wsl:
   echo 'Installing all Windows specific apps'
   sudo apt update
   sudo apt upgrade -y
-  sudo apt install podman -y
-  curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh
+  sudo apt install distrobox podman -y
   echo 'Finished installing all Windows apps'
 
 # Set up git and GitHub account
