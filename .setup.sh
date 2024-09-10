@@ -8,6 +8,7 @@ setup_dotfiles() {
     mv ~/dotfiles/.git ~/
     rm -rdf ~/dotfiles
     git restore .
+    source ~/.bashrc
 }
 
 # Install Just
@@ -19,4 +20,5 @@ install_just () {
 
 setup_dotfiles
 install_just
+just installs-wsl
 echo -e "\n  source ~/.bashrc && just installs-wsl\n"
