@@ -15,8 +15,8 @@ install_just () {
     mkdir -p ~/.local/bin
     curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to ~/.local/bin
     source ~/.bashrc
-    just installs-wsl
 }
 
 setup_dotfiles
 install_just
+echo -e "\n  source ~/.bashrc && just installs-wsl\n"
