@@ -9,5 +9,5 @@
 	rebase = false
 [core]
 	editor = code --wait
-# [credential]
-# 	helper = cache --timeout=7776000
+[credential]
+	helper = cache --timeout=7776000
