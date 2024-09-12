@@ -22,21 +22,24 @@ compress:
 installs-fedora:
   #!/usr/bin/env bash
 
-  echo 'Installing all Fedora specific apps'
+  echo '\n Installing all Fedora specific apps \n'
   sudo echo -e "[user]\ndefault=krauzer" >> /etc/wsl.conf
+  sudo echo -e "[engine]\nlog_driver = \"journald\"" > /etc/containers/containers.conf
   sudo dnf update -y
   sudo dnf install sudo util-linux openssh wget distrobox podman -y
-  echo 'Finished installing all Fedora apps'
+  echo '\n Finished installing all Fedora apps \n'
+  echo -e "\n Don't forget to add this to /etc/containers/containers.conf\n\n[engine]\nlog_driver = \"journald\" \n"
 
 # Install Ubuntu specific apps
 installs-ubuntu:
   #!/usr/bin/env bash
 
-  echo 'Installing all Ubuntu specific apps'
+  echo '\n Installing all Ubuntu specific apps \n'
   sudo apt update
   sudo apt upgrade -y
   sudo apt install distrobox podman -y
-  echo 'Finished installing all Ubuntu apps'
+  echo '\n Finished installing all Ubuntu apps \n'
+  echo -e "\n Don't forget to add this to /etc/containers/containers.conf\n\n[engine]\nlog_driver = \"journald\" \n"
 
 # Install Windows specific apps
 installs-windows:
