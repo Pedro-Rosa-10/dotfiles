@@ -64,6 +64,7 @@ remaining_apps() {
 }
 
 # Execute all functions
+curl -L https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch -o ~/.neofetch.sh
 install_git
 setup_dotfiles
 install_just
