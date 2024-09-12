@@ -14,7 +14,7 @@ install_git() {
         fedora)
             sudo dnf install git -y
             ;;
-        ubuntu | debian)
+        ubuntu)
             sudo apt install git -y
             ;;
         *)
@@ -54,7 +54,7 @@ remaining_apps() {
         fedora)
             just installs-fedora
             ;;
-        ubuntu | debian)
+        ubuntu)
             just installs-ubuntu
             ;;
         *)
