@@ -18,6 +18,26 @@ compress:
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo 'New compressed video file compressed.mp4'
 
+# Install Fedora specific apps
+installs-fedora:
+  #!/usr/bin/env bash
+
+  echo 'Installing all Fedora specific apps'
+  sudo echo -e "[user]\ndefault=krauzer" >> /etc/wsl.conf
+  sudo dnf update -y
+  sudo dnf install sudo util-linux openssh wget distrobox podman -y
+  echo 'Finished installing all Fedora apps'
+
+# Install Ubuntu specific apps
+installs-ubuntu:
+  #!/usr/bin/env bash
+
+  echo 'Installing all Ubuntu specific apps'
+  sudo apt update
+  sudo apt upgrade -y
+  sudo apt install distrobox podman -y
+  echo 'Finished installing all Ubuntu apps'
+
 # Install Windows specific apps
 installs-windows:
   echo 'Installing all Windows specific apps'
@@ -40,16 +60,6 @@ installs-windows:
   winget install --id=$app -e
   }
   echo 'Finished installing all Windows apps'
-
-# Install WSL specific apps
-installs-wsl:
-  #!/usr/bin/env bash
-
-  echo 'Installing all WSL specific apps'
-  sudo apt update
-  sudo apt upgrade -y
-  sudo apt install distrobox podman -y
-  echo 'Finished installing all WSL apps'
 
 # Set up git and GitHub account
 setup-github:
