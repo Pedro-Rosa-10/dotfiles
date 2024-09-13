@@ -23,7 +23,7 @@ installs-fedora:
   #!/usr/bin/env bash
 
   echo '\n Installing all Fedora specific apps \n'
-  sudo echo -e "[user]\ndefault=krauzer" >> /etc/wsl.conf
+  sudo echo -e "[user]\ndefault=krauzer\n\n[boot]\nsystemd=true\nnetworkingMode=mirrored" >> /etc/wsl.conf
   sudo echo -e "[engine]\nlog_driver = \"journald\"" > /etc/containers/containers.conf
   sudo dnf update -y
   sudo dnf install sudo util-linux openssh wget distrobox podman -y
