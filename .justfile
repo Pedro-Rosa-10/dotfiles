@@ -27,6 +27,8 @@ installs-fedora:
   sudo echo -e "[engine]\nlog_driver = \"journald\"" > /etc/containers/containers.conf
   sudo dnf update -y
   sudo dnf install sudo util-linux openssh wget distrobox podman -y
+  sudo chmod u+s /usr/bin/newuidmap
+  sudo chmod u+s /usr/bin/newgidmap
   echo '\n Finished installing all Fedora apps \n'
   echo -e "\n Don't forget to add this to /etc/containers/containers.conf\n\n[engine]\nlog_driver = \"journald\" \n"
 
