@@ -24,8 +24,7 @@ installs-ubuntu:
 
   echo ""
   sudo apt update
-  sudo apt upgrade -y
-  sudo apt install distrobox podman -y
+  sudo apt install podman -y
   echo ""
 
 # Install Windows specific apps
