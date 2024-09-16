@@ -48,7 +48,7 @@ remaining_apps() {
     fi
 
     case "$DISTRO" in
-        ubuntu)
+        ubuntu*)
             just installs-ubuntu
             ;;
         *)
