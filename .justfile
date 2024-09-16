@@ -18,20 +18,6 @@ compress:
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo 'New compressed video file compressed.mp4'
 
-# Install Fedora specific apps
-installs-fedora:
-  #!/usr/bin/env bash
-
-  echo '\n Installing all Fedora specific apps \n'
-  sudo echo -e "[user]\ndefault=krauzer\n\n[boot]\nsystemd=true\nnetworkingMode=mirrored" >> /etc/wsl.conf
-  sudo echo -e "[engine]\nlog_driver = \"journald\"" > /etc/containers/containers.conf
-  sudo dnf update -y
-  sudo dnf install sudo util-linux openssh wget distrobox podman -y
-  sudo chmod u+s /usr/bin/newuidmap
-  sudo chmod u+s /usr/bin/newgidmap
-  echo '\n Finished installing all Fedora apps \n'
-  echo -e "\n Don't forget to add this to /etc/containers/containers.conf\n\n[engine]\nlog_driver = \"journald\" \n"
-
 # Install Ubuntu specific apps
 installs-ubuntu:
   #!/usr/bin/env bash
@@ -41,7 +27,6 @@ installs-ubuntu:
   sudo apt upgrade -y
   sudo apt install distrobox podman -y
   echo '\n Finished installing all Ubuntu apps \n'
-  echo -e "\n Don't forget to add this to /etc/containers/containers.conf\n\n[engine]\nlog_driver = \"journald\" \n"
 
 # Install Windows specific apps
 installs-windows:
