@@ -1,3 +1,2 @@
 [wsl2]
-systemd=true
 networkingMode=mirrored
