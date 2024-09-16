@@ -6,7 +6,7 @@ install_git() {
         . /etc/os-release
         DISTRO=$ID
     else
-        echo "Cannot determine the distribution, /etc/os-release not found"
+        echo -e "\n Cannot determine the distribution, /etc/os-release not found \n"
         return 1
     fi
 
@@ -18,7 +18,7 @@ install_git() {
             sudo apt install git -y
             ;;
         *)
-            echo "Unknown distro, nothing to do here"
+            echo -e "\n Unknown distro, nothing to do here \n"
             ;;
     esac
 }
@@ -46,7 +46,7 @@ remaining_apps() {
         . /etc/os-release
         DISTRO=$ID
     else
-        echo "Cannot determine the distribution, /etc/os-release not found"
+        echo -e "\n Cannot determine the distribution, /etc/os-release not found \n"
         return 1
     fi
 
@@ -58,7 +58,7 @@ remaining_apps() {
             just installs-ubuntu
             ;;
         *)
-            echo "Unknown distro, nothing to do here"
+            echo -e "\n Unknown distro, nothing to do here \n"
             ;;
     esac
 }
