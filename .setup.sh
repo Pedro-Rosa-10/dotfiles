@@ -11,14 +11,11 @@ install_git() {
     fi
 
     case "$DISTRO" in
-        fedora)
-            sudo dnf install git -y
-            ;;
-        ubuntu)
+        ubuntu*)
             sudo apt install git -y
             ;;
         *)
-            echo -e "\n Unknown distro, nothing to do here \n"
+            echo -e "\n Nothing to do here \n"
             ;;
     esac
 }
@@ -51,14 +48,11 @@ remaining_apps() {
     fi
 
     case "$DISTRO" in
-        fedora)
-            just installs-fedora
-            ;;
         ubuntu)
             just installs-ubuntu
             ;;
         *)
-            echo -e "\n Unknown distro, nothing to do here \n"
+            just installs-windows
             ;;
     esac
 }
