@@ -7,30 +7,30 @@ _default:
 # Extract the audio from a video
 [no-cd]
 audio:
-  echo 'Extacting the audio from video.mp4'
+  echo ""
   ffmpeg -i  .\video.mp4 -vn -acodec mp3  .\audio.mp3
-  echo 'The audio was extracted to audio.mp3'
+  echo ""
 
 # Compress a video using FFmpeg
 [no-cd]
 compress:
-  echo 'Compressing the video.mp4 video'
+  echo ""
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
-  echo 'New compressed video file compressed.mp4'
+  echo ""
 
 # Install Ubuntu specific apps
 installs-ubuntu:
   #!/usr/bin/env bash
 
-  echo '\n Installing all Ubuntu specific apps \n'
+  echo ""
   sudo apt update
   sudo apt upgrade -y
   sudo apt install distrobox podman -y
-  echo '\n Finished installing all Ubuntu apps \n'
+  echo ""
 
 # Install Windows specific apps
 installs-windows:
-  echo 'Installing all Windows specific apps'
+  echo ""
   $applications = @(
   "BleachBit.BleachBit",
   "Discord.Discord",
@@ -49,19 +49,20 @@ installs-windows:
   foreach ($app in $applications) {
   winget install --id=$app -e
   }
-  echo 'Finished installing all Windows apps'
+  echo ""
 
 # Set up git and GitHub account
 setup-github:
   #!/usr/bin/env bash
 
-  echo -e '\n Generating a new SSH key\n'
+  echo ""
   ssh-keygen -t ed25519 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
-  echo -e '\n Copy the newly created key\n'
+  echo ""
   cat ~/.ssh/id_ed25519.pub
-  echo -e '\n Paste it into a new SSH key: https://github.com/settings/keys\n'
+  echo ""
 
 # Chris Titus' Windows Utility
 windows-util:
-  echo 'Opening the best Windows Utility'
+  echo ""
   irm christitus.com/win | iex
+  echo ""
