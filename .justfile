@@ -24,6 +24,7 @@ installs-ubuntu:
 
   echo ""
   sudo apt update
+  sudo apt upgrade -y
   sudo apt install distrobox podman -y
   echo ""
 
