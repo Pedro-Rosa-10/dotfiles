@@ -23,8 +23,10 @@ installs-ubuntu:
   #!/usr/bin/env bash
 
   echo ""
-  sudo apt upgrade -y
-  sudo apt install distrobox podman -y
+  sudo apt install -y \
+    python3 \
+    python3-pip \
+    python3.12-venv
   echo ""
 
 # Install Windows specific apps
