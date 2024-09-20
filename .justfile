@@ -26,7 +26,7 @@ installs-ubuntu:
   sudo apt install -y \
     python3 \
     python3-pip \
-    python3.12-venv
+    python3.10-venv
   echo ""
 
 # Install Windows specific apps
