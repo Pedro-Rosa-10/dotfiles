@@ -27,6 +27,7 @@ installs-ubuntu:
     python3 \
     python3-pip \
     python3.10-venv
+  just setup-github
   echo ""
 
 # Install Windows specific apps
