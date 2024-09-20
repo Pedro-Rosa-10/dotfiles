@@ -27,6 +27,7 @@ installs-ubuntu:
     python3 \
     python3-pip \
     python3.10-venv
+  ln -s ~/.wsl.conf /etc/wsl.conf
   just setup-github
   echo ""
 

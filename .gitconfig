@@ -8,6 +8,6 @@
 [pull]
 	rebase = false
 [core]
-	editor = code --wait
+	editor = \"C:\\Users\\poaped10\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
 [credential]
 	helper = cache --timeout=7776000
