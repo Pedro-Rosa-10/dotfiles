@@ -12,7 +12,6 @@ install_git() {
 
     case "$DISTRO" in
         ubuntu*)
-	    su - krauzer
             sudo apt update
             ;;
         *)
