@@ -18,19 +18,6 @@ compress:
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo ""
 
-# Install Ubuntu specific apps
-installs-ubuntu:
-  #!/usr/bin/env bash
-
-  echo ""
-  sudo apt install -y \
-    python3 \
-    python3-pip \
-    python3.10-venv
-  ln -s ~/.wsl.conf /etc/wsl.conf
-  just setup-github
-  echo ""
-
 # Install Windows specific apps
 installs-windows:
   echo ""
