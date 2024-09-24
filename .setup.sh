@@ -11,8 +11,9 @@ install_git() {
     fi
 
     case "$DISTRO" in
-        ubuntu*)
-            sudo apt update
+        alpine*)
+            apk update
+            apk upgrade
             ;;
         *)
             echo -e "\n Nothing to do here \n"
@@ -48,12 +49,12 @@ remaining_apps() {
     fi
 
     case "$DISTRO" in
-        ubuntu*)
-            sudo apt install -y \
-                python3 \
-                python3-pip \
-                python3.10-venv
-            ln -s ~/.wsl.conf /etc/wsl.conf
+        alpine*)
+            apk add python3
+            apk add py3-pip
+            echo -e "[wsl2]\nnetworkingMode=mirrored" > /etc/wsl.conf
+            echo 'source ~/venv/bin/activate' > ~/.ashrc
+            echo 'test -f ~/.ashrc && . ~/.ashrc' > ~/.profile
             ;;
         *)
             just installs-windows
