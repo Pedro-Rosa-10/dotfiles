@@ -1,11 +1,3 @@
-# Ubuntu specific
-alias uupdate='sudo apt update && sudo apt upgrade -y'
-alias uclean='sudo apt autoremove && sudo apt clean && sudo apt autoclean'
-
-# Fedora specific
-alias fupdate='sudo dnf update -y'
-alias fclean='sudo dnf autoremove =y && sudo dnf clean all && sudo dnf clean packages'
-
 # Git routines
 alias status='git status'
 alias add0='git add .'
