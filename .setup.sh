@@ -14,7 +14,7 @@ install_git() {
         alpine*)
             apk update
             apk upgrade
-	        apk add podman
+            apk add podman
             ;;
         debian*)
             sudo apt install -y git
@@ -59,7 +59,7 @@ remaining_apps() {
             podman run -it -v $(pwd):/app devenv
             ;;
         debian*)
-	        just installs-linux
+            just installs-linux
             ;;
         *)
             just installs-windows
