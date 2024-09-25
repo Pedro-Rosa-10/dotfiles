@@ -16,7 +16,7 @@ install_git() {
             apk upgrade
 	        apk add podman
             ;;
-	    debian*)
+        debian*)
             sudo apt install -y git
             ;;
         *)
@@ -58,7 +58,7 @@ remaining_apps() {
             podman build -t devenv .
             podman run -it -v $(pwd):/app devenv
             ;;
-	    debian*)
+        debian*)
 	        just installs-linux
             ;;
         *)
