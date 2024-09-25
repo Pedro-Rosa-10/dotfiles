@@ -18,6 +18,19 @@ compress:
   ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
   echo ""
 
+# Install Linux specific apps
+installs-linux:
+  #!/usr/bin/env bash
+
+  echo ""
+  sudo apt upgrade -y
+  sudo apt install -y \
+    podman \
+    wget \
+    openssh-client
+  just setup-github
+  echo ""
+
 # Install Windows specific apps
 installs-windows:
   echo ""
