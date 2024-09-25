@@ -14,6 +14,7 @@ install_git() {
         alpine*)
             apk update
             apk upgrade
+	    apk add podman
             ;;
         *)
             echo -e "\n Nothing to do here \n"
@@ -50,11 +51,9 @@ remaining_apps() {
 
     case "$DISTRO" in
         alpine*)
-            apk add python3
-            apk add py3-pip
             echo -e "[wsl2]\nnetworkingMode=mirrored" > /etc/wsl.conf
-            echo 'source ~/venv/bin/activate' > ~/.ashrc
-            echo 'test -f ~/.ashrc && . ~/.ashrc' > ~/.profile
+	    podman build -t devenv .
+	    podman run -it -v $(pwd):/app devenv
             ;;
         *)
             just installs-windows
@@ -63,7 +62,6 @@ remaining_apps() {
 }
 
 # Execute all functions
-curl -L https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch -o ~/.neofetch.sh
 install_git
 setup_dotfiles
 install_just
