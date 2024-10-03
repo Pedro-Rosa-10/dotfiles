@@ -11,11 +11,6 @@ install_git() {
     fi
 
     case "$DISTRO" in
-        alpine*)
-            apk update
-            apk upgrade
-            apk add podman
-            ;;
         debian*)
             sudo apt install -y git
             ;;
@@ -53,11 +48,6 @@ remaining_apps() {
     fi
 
     case "$DISTRO" in
-        alpine*)
-            echo -e "[wsl2]\nnetworkingMode=mirrored" > /etc/wsl.conf
-            podman build -t devenv .
-            podman run -it -v $(pwd):/app devenv
-            ;;
         debian*)
             just installs-linux
             ;;
