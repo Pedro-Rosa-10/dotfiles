@@ -11,7 +11,7 @@ install_git() {
     fi
 
     case "$DISTRO" in
-        debian*)
+        ubuntu*)
             sudo apt install -y git
             ;;
         *)
@@ -43,8 +43,7 @@ remaining_apps() {
         . /etc/os-release
         DISTRO=$ID
     else
-        echo -e "\n Cannot determine the distribution, /etc/os-release not found \n"
-        return 1
+        just installs-windows
     fi
 
     case "$DISTRO" in
@@ -52,7 +51,8 @@ remaining_apps() {
             just installs-linux
             ;;
         *)
-            just installs-windows
+            echo -e "\n Cannot determine the distribution, /etc/os-release not found \n"
+            return 1
             ;;
     esac
 }
