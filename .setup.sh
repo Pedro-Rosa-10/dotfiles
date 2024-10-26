@@ -47,7 +47,7 @@ remaining_apps() {
     fi
 
     case "$DISTRO" in
-        debian*)
+        ubuntu*)
             just installs-linux
             ;;
         *)
