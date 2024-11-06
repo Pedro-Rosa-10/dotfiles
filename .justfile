@@ -41,7 +41,6 @@ installs-windows:
   "Microsoft.VisualStudioCode",
   "SomePythonThings.WingetUIStore",
   "VideoLAN.VLC",
-  "RARLab.WinRAR",
   "AnyDeskSoftwareGmbH.AnyDesk",
   "Google.Chrome"
   )
