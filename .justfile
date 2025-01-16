@@ -42,7 +42,8 @@ installs-windows:
   "SomePythonThings.WingetUIStore",
   "VideoLAN.VLC",
   "AnyDeskSoftwareGmbH.AnyDesk",
-  "Google.Chrome"
+  "Google.Chrome",
+  "7zip.7zip"
   )
 
   foreach ($app in $applications) {
