@@ -24,10 +24,8 @@ installs-linux:
 
   echo ""
   sudo apt update
-  sudo apt install -y \
-    podman \
-    wget \
-    openssh-client
+  sudo apt upgrade -y
+  sudo apt install -y podman
   just setup-github
   echo ""
 
