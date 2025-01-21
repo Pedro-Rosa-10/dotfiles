@@ -6,6 +6,7 @@
   alias fetch='git fetch'
   alias pull='git pull'
   alias log='git log -1'
+  alias remote='git remote -v'
 
 # Others
   alias aliases='cat ~/.bash_aliases'
