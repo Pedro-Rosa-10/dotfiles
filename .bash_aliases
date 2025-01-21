@@ -11,7 +11,6 @@
 # Others
   alias aliases='cat ~/.bash_aliases'
   alias ll='ls -l --color=auto'
-  alias neofetch='bash ~/.neofetch.sh'
   alias wactivate='source venv/Scripts/activate'
   alias lactivate='source venv/bin/activate'
   alias wclean='find ~/ -type f -name "*.Identifier" -delete'
