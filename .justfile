@@ -44,7 +44,8 @@ installs-windows:
   "VideoLAN.VLC",
   "AnyDeskSoftwareGmbH.AnyDesk",
   "Google.Chrome",
-  "7zip.7zip"
+  "7zip.7zip",
+  "valinet.ExplorerPatcher"
   )
 
   foreach ($app in $applications) {
