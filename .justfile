@@ -31,24 +31,27 @@ installs-linux:
 # Install Windows specific apps
 installs-windows:
   echo ""
+  scoop bucket add extras
   $applications = @(
-  "BleachBit.BleachBit",
-  "Discord.Discord",
-  "GIMP.GIMP",
-  "OBSProject.OBSStudio",
-  "Microsoft.PowerToys",
-  "Spotify.Spotify",
-  "Microsoft.VisualStudioCode",
-  "MartiCliment.UniGetUI",
-  "VideoLAN.VLC",
-  "AnyDeskSoftwareGmbH.AnyDesk",
-  "Google.Chrome",
-  "7zip.7zip",
-  "valinet.ExplorerPatcher"
+    "bleachbit",
+    "discord",
+    #"gimp",
+    "obs-studio",
+    "powertoys",
+    "spotify",
+    "vscode",
+    "unigetui",
+    "vlc",
+    "anydesk",
+    "googlechrome",
+    "7zip",
+    "just",
+    "ffmpeg",
+    "git",
   )
 
   foreach ($app in $applications) {
-  winget install --id=$app -e
+  scoop install $app
   }
   echo ""
 
