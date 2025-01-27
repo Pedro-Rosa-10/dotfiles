@@ -23,9 +23,8 @@ installs-linux:
   #!/usr/bin/env bash
 
   echo ""
-  sudo apt update
-  sudo apt upgrade -y
-  sudo apt install -y podman
+  sudo apt upgrade -y && sudo apt install -y \
+    openssh-client wget podman
   just setup-github
   echo ""
 
