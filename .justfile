@@ -39,7 +39,7 @@ installs-windows:
   "Microsoft.PowerToys",
   "Spotify.Spotify",
   "Microsoft.VisualStudioCode",
-  "SomePythonThings.WingetUIStore",
+  "MartiCliment.UniGetUI",
   "VideoLAN.VLC",
   "AnyDeskSoftwareGmbH.AnyDesk",
   "Google.Chrome",
