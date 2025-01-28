@@ -32,9 +32,9 @@ installs-linux:
 installs-windows:
   echo ""
   scoop bucket add extras
-
   $applications = @(
     "7zip",
+    "altus",
     "anydesk",
     "bleachbit",
     "discord",
