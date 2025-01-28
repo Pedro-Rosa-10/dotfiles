@@ -2,22 +2,7 @@
 
 # Install Git
 install_git() {
-    if [[ -f /etc/os-release ]]; then
-        . /etc/os-release
-        DISTRO=$ID
-    else
-        echo -e "\n Cannot determine the distribution, /etc/os-release not found \n"
-        return 1
-    fi
-
-    case "$DISTRO" in
-        debian*)
-            sudo apt install -y git
-            ;;
-        *)
-            echo -e "\n Nothing to do here \n"
-            ;;
-    esac
+    sudo apt install -y git
 }
 
 # Set up dotfiles
@@ -39,22 +24,7 @@ install_just () {
 
 # Install remaining apps
 remaining_apps() {
-    if [[ -f /etc/os-release ]]; then
-        . /etc/os-release
-        DISTRO=$ID
-    else
-        just installs-windows
-    fi
-
-    case "$DISTRO" in
-        debian*)
-            just installs-linux
-            ;;
-        *)
-            echo -e "\n Cannot determine the distribution, /etc/os-release not found \n"
-            return 1
-            ;;
-    esac
+    just installs-linux
 }
 
 # Execute all functions
