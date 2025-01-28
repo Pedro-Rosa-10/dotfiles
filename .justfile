@@ -48,6 +48,8 @@ installs-windows:
   "just",
   "ffmpeg",
   "git",
+  "firefox",
+  "flameshot"
   )
 
   foreach ($app in $applications) {
