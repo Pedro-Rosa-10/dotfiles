@@ -33,28 +33,28 @@ installs-windows:
   echo ""
   scoop bucket add extras
   $applications = @(
-    "7zip",
-    "altus",
-    "anydesk",
-    "bleachbit",
-    "discord",
-    "firefox",
-    "flameshot",
-    "gimp",
-    "git",
-    "googlechrome",
-    "obs-studio",
-    "powertoys",
-    "spotify",
-    "unigetui",
-    "vscode",
-    "vlc",
-    "just",
-    "ffmpeg",
+  "7zip",
+  "altus",
+  "anydesk",
+  "bleachbit",
+  "discord",
+  "firefox",
+  "flameshot",
+  "gimp",
+  "git",
+  "googlechrome",
+  "obs-studio",
+  "powertoys",
+  "spotify",
+  "unigetui",
+  "vscode",
+  "vlc",
+  "just",
+  "ffmpeg",
   )
 
   foreach ($app in $applications) {
-    scoop install $app
+  scoop install $app
   }
   echo ""
 
