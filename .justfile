@@ -7,15 +7,19 @@ _default:
 # Extract the audio from a video
 [no-cd]
 audio:
+  #!/usr/bin/env bash
+
   echo ""
-  ffmpeg -i  .\video.mp4 -vn -acodec mp3  .\audio.mp3
+  ffmpeg -i  ./video.mp4 -vn -acodec mp3  ./audio.mp3
   echo ""
 
 # Compress a video using FFmpeg
 [no-cd]
 compress:
+  #!/usr/bin/env bash
+
   echo ""
-  ffmpeg -i .\video.mp4 -vcodec libx265 -crf 28 .\compressed.mp4
+  ffmpeg -i ./video.mp4 -vcodec libx265 -crf 28 ./compressed.mp4
   echo ""
 
 # Install Linux specific apps
@@ -28,36 +32,6 @@ installs-linux:
   just setup-github
   echo ""
 
-# Install Windows specific apps
-installs-windows:
-  echo ""
-  scoop bucket add extras
-  $applications = @(
-  "7zip",
-  "altus",
-  "anydesk",
-  "bleachbit",
-  "discord",
-  "firefox",
-  "flameshot",
-  "gimp",
-  "git",
-  "googlechrome",
-  "obs-studio",
-  "powertoys",
-  "spotify",
-  "unigetui",
-  "vscode",
-  "vlc",
-  "just",
-  "ffmpeg",
-  )
-
-  foreach ($app in $applications) {
-  scoop install $app
-  }
-  echo ""
-
 # Set up git and GitHub account
 setup-github:
   #!/usr/bin/env bash
@@ -66,10 +40,4 @@ setup-github:
   ssh-keygen -t ed25519 -C 144266741+Pedro-Rosa-10@users.noreply.github.com
   echo ""
   cat ~/.ssh/id_ed25519.pub
-  echo ""
-
-# Chris Titus' Windows Utility
-windows-util:
-  echo ""
-  irm christitus.com/win | iex
   echo ""
