@@ -1,0 +1,166 @@
+{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": {
+                "value": "\/Date(1738542961000)\/",
+                "DisplayHint": 2,
+                "DateTime": "domingo, 2 de fevereiro de 2025 21:36:01"
+            },
+            "Manifests": 1356
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": {
+                "value": "\/Date(1738544526000)\/",
+                "DisplayHint": 2,
+                "DateTime": "domingo, 2 de fevereiro de 2025 22:02:06"
+            },
+            "Manifests": 2126
+        }
+    ],
+    "apps": [
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "7zip",
+            "Version": "24.09",
+            "Updated": "\/Date(1737991407224)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "anydesk",
+            "Version": "9.0.2",
+            "Updated": "\/Date(1738003652040)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "bleachbit",
+            "Version": "4.6.2",
+            "Updated": "\/Date(1737991544833)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "dark",
+            "Version": "3.14",
+            "Updated": "\/Date(1738002706840)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "discord",
+            "Version": "1.0.9156-20",
+            "Updated": "\/Date(1737991623039)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "ffmpeg",
+            "Version": "7.1",
+            "Updated": "\/Date(1738004086400)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "firefox",
+            "Version": "134.0.2",
+            "Updated": "\/Date(1738031139076)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "flameshot",
+            "Version": "12.1.0",
+            "Updated": "\/Date(1738031076564)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "gimp",
+            "Version": "2.10.38-1",
+            "Updated": "\/Date(1738007121168)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "git",
+            "Version": "2.47.1.2",
+            "Updated": "\/Date(1738004403981)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "googlechrome",
+            "Version": "132.0.6834.160",
+            "Updated": "\/Date(1738153267409)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "innounp",
+            "Version": "2.64.1",
+            "Updated": "\/Date(1738553640359)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "just",
+            "Version": "1.39.0",
+            "Updated": "\/Date(1737997121338)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "obs-studio",
+            "Version": "31.0.1",
+            "Updated": "\/Date(1738002505219)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "powertoys",
+            "Version": "0.88.0",
+            "Updated": "\/Date(1738153444213)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "scoop-search",
+            "Version": "2.0.0",
+            "Updated": "\/Date(1737991388521)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "spotify",
+            "Version": "1.2.56.502.ga68d2d4f",
+            "Updated": "\/Date(1738258132442)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "unigetui",
+            "Version": "3.1.5",
+            "Updated": "\/Date(1737991019184)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "vlc",
+            "Version": "3.0.21",
+            "Updated": "\/Date(1738003630210)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "vscode",
+            "Version": "1.96.4",
+            "Updated": "\/Date(1738003456647)\/"
+        }
+    ]
+}
