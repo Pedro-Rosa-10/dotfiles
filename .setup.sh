@@ -43,7 +43,7 @@ remaining_apps() {
         . /etc/os-release
         DISTRO=$ID
     else
-        scoop import .scoop.json
+        scoop import ~/.scoop.json
     fi
 
     case "$DISTRO" in
