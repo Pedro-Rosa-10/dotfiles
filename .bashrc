@@ -21,9 +21,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Ignore Podman warning
-export PODMAN_IGNORE_CGROUPSV1_WARNING=1
-
 # paste.rs
 function paste() {
     echo ""
