@@ -16,11 +16,6 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-# Bash aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # Source .profile if it exists
 if [ -f ~/.profile ]; then
     source ~/.profile
