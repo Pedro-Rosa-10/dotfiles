@@ -38,3 +38,12 @@ setup-github:
   echo ""
   cat ~/.ssh/id_ed25519.pub
   echo ""
+
+# Set up MS Windows symlinks
+setup-mklinks:
+    @echo off
+
+    mklink /D "%USERPROFILE%\.applications" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Scoop Apps"
+    mklink /D "%USERPROFILE%\.scoop-apps" "%USERPROFILE%\scoop\apps"
+
+    pause
