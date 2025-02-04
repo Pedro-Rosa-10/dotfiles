@@ -25,7 +25,7 @@ installs-linux:
 
   echo ""
   sudo apt upgrade -y && sudo apt install -y \
-    openssh-client wget docker docker-compose
+    openssh-client wget docker.io docker-compose
   just setup-github
   echo ""
 
