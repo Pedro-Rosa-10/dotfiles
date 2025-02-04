@@ -21,9 +21,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Segregate Podman runtimes
-export XDG_RUNTIME_DIR=/run/user/$(id -u)
-
 # paste.rs
 function paste() {
     echo ""
