@@ -21,6 +21,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Source .profile if it exists
+if [ -f ~/.profile ]; then
+    source ~/.profile
+fi
+
 # paste.rs
 function paste() {
     echo ""
