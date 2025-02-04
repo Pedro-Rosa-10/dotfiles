@@ -11,7 +11,7 @@ install_git() {
     fi
 
     case "$DISTRO" in
-        debian*)
+        ubuntu*)
             sudo apt install -y git
             ;;
         *)
@@ -47,7 +47,7 @@ remaining_apps() {
     fi
 
     case "$DISTRO" in
-        debian*)
+        ubuntu*)
             just installs-linux
             ;;
         *)
