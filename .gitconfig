@@ -11,3 +11,5 @@
 	helper = cache --timeout=7776000
 [credential "helperselector"]
 	selected = manager
+[core]
+	editor = nano
