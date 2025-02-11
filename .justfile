@@ -24,8 +24,12 @@ installs-linux:
   #!/usr/bin/env bash
 
   echo ""
-  sudo apt upgrade -y && sudo apt install -y \
-    openssh-client wget docker.io docker-compose
+  sudo apt update && sudo apt install -y \
+    openssh-client wget
+
+  curl -fsSL https://get.docker.com -o get-docker.sh
+  sudo sh get-docker.sh
+
   just setup-github
   echo ""
 

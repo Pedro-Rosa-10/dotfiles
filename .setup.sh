@@ -12,7 +12,7 @@ install_git() {
 
     case "$DISTRO" in
         ubuntu*)
-            sudo apt install -y git
+            sudo apt update && sudo apt install -y git
             ;;
         *)
             echo -e "\n Nothing to do here \n"
