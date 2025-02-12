@@ -25,11 +25,7 @@ installs-linux:
 
   echo ""
   sudo apt update && sudo apt install -y \
-    openssh-client wget docker-compose
-
-  curl -fsSL https://get.docker.com -o get-docker.sh
-  sudo sh get-docker.sh
-
+    openssh-client wget podman
   just setup-github
   echo ""
 
