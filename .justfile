@@ -41,9 +41,9 @@ setup-github:
 
 # Set up MS Windows symlinks
 setup-mklinks:
-    @echo off
+  @echo off
 
-    mklink /D "%USERPROFILE%\.applications" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Scoop Apps"
-    mklink /D "%USERPROFILE%\.scoop-apps" "%USERPROFILE%\scoop\apps"
+  mklink /D "%USERPROFILE%\.applications" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Scoop Apps"
+  mklink /D "%USERPROFILE%\.scoop-apps" "%USERPROFILE%\scoop\apps"
 
-    pause
+  pause
