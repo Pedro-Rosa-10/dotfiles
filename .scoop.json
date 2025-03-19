@@ -4,9 +4,9 @@
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main.git",
             "Updated": {
-                "value": "\/Date(1742301095000)\/",
+                "value": "\/Date(1742401788000)\/",
                 "DisplayHint": 2,
-                "DateTime": "ter‡a-feira, 18 de mar‡o de 2025 09:31:35"
+                "DateTime": "quarta-feira, 19 de mar‡o de 2025 13:29:48"
             },
             "Manifests": 1387
         },
@@ -14,9 +14,9 @@
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
             "Updated": {
-                "value": "\/Date(1742301061000)\/",
+                "value": "\/Date(1742401783000)\/",
                 "DisplayHint": 2,
-                "DateTime": "ter‡a-feira, 18 de mar‡o de 2025 09:31:01"
+                "DateTime": "quarta-feira, 19 de mar‡o de 2025 13:29:43"
             },
             "Manifests": 2144
         }
@@ -69,7 +69,7 @@
             "Source": null,
             "Name": "firefox",
             "Version": "136.0",
-            "Updated": "\/Date(1742297287413)\/"
+            "Updated": "\/Date(1742391080391)\/"
         },
         {
             "Info": "",
@@ -79,11 +79,11 @@
             "Updated": "\/Date(1738031076564)\/"
         },
         {
-            "Info": "Install failed",
-            "Source": null,
+            "Info": "",
+            "Source": "extras",
             "Name": "gimp",
-            "Version": null,
-            "Updated": "\/Date(1742306105213)\/"
+            "Version": "2.10.38-1",
+            "Updated": "\/Date(1742402132605)\/"
         },
         {
             "Info": "",
