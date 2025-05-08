@@ -19,16 +19,6 @@ compress:
   ffmpeg -i ./video.mp4 -vcodec libx265 -crf 28 ./compressed.mp4
   echo ""
 
-# Install Linux specific apps
-installs-linux:
-  #!/usr/bin/env bash
-
-  echo ""
-  sudo apt update && sudo apt install -y \
-    openssh-client wget podman
-  just setup-github
-  echo ""
-
 # Set up git and GitHub account
 setup-github:
   #!/usr/bin/env bash
