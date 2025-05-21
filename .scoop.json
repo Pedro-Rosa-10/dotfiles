@@ -4,21 +4,21 @@
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main.git",
             "Updated": {
-                "value": "\/Date(1742401788000)\/",
+                "value": "\/Date(1747816200000)\/",
                 "DisplayHint": 2,
-                "DateTime": "quarta-feira, 19 de mar‡o de 2025 13:29:48"
+                "DateTime": "quarta-feira, 21 de maio de 2025 05:30:00"
             },
-            "Manifests": 1387
+            "Manifests": 1389
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
             "Updated": {
-                "value": "\/Date(1742401783000)\/",
+                "value": "\/Date(1747816178000)\/",
                 "DisplayHint": 2,
-                "DateTime": "quarta-feira, 19 de mar‡o de 2025 13:29:43"
+                "DateTime": "quarta-feira, 21 de maio de 2025 05:29:38"
             },
-            "Manifests": 2144
+            "Manifests": 2165
         }
     ],
     "apps": [
@@ -33,29 +33,29 @@
             "Info": "",
             "Source": "extras",
             "Name": "anydesk",
-            "Version": "9.0.4",
-            "Updated": "\/Date(1739793636197)\/"
+            "Version": "9.5.4",
+            "Updated": "\/Date(1747142199864)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "bleachbit",
-            "Version": "4.6.2",
-            "Updated": "\/Date(1737991544833)\/"
+            "Version": "5.0.0",
+            "Updated": "\/Date(1746447516812)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "dark",
-            "Version": "3.14",
-            "Updated": "\/Date(1738002706840)\/"
+            "Version": "3.14.1",
+            "Updated": "\/Date(1744892178003)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "discord",
-            "Version": "1.0.9156-20",
-            "Updated": "\/Date(1737991623039)\/"
+            "Version": "1.0.9188-21",
+            "Updated": "\/Date(1744030509001)\/"
         },
         {
             "Info": "",
@@ -69,7 +69,7 @@
             "Source": null,
             "Name": "firefox",
             "Version": "136.0",
-            "Updated": "\/Date(1742391080391)\/"
+            "Updated": "\/Date(1747777937902)\/"
         },
         {
             "Info": "",
@@ -89,22 +89,22 @@
             "Info": "",
             "Source": "main",
             "Name": "git",
-            "Version": "2.48.1",
-            "Updated": "\/Date(1739793676060)\/"
+            "Version": "2.49.0",
+            "Updated": "\/Date(1742470036491)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "googlechrome",
-            "Version": "134.0.6998.89",
-            "Updated": "\/Date(1741694528599)\/"
+            "Version": "136.0.7103.114",
+            "Updated": "\/Date(1747398337791)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "innounp",
-            "Version": "2.64.3",
-            "Updated": "\/Date(1742178439741)\/"
+            "Version": "2.64.4",
+            "Updated": "\/Date(1746535983520)\/"
         },
         {
             "Info": "",
@@ -117,15 +117,15 @@
             "Info": "",
             "Source": "extras",
             "Name": "obs-studio",
-            "Version": "31.0.2",
-            "Updated": "\/Date(1741608431250)\/"
+            "Version": "31.0.3",
+            "Updated": "\/Date(1744892237362)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "powertoys",
-            "Version": "0.89.0",
-            "Updated": "\/Date(1741175247895)\/"
+            "Version": "0.91.1",
+            "Updated": "\/Date(1747763439509)\/"
         },
         {
             "Info": "",
@@ -138,15 +138,15 @@
             "Info": "",
             "Source": "extras",
             "Name": "spotify",
-            "Version": "1.2.59.514.g834e17d4",
-            "Updated": "\/Date(1741972507660)\/"
+            "Version": "1.2.63.394.g126b0d89",
+            "Updated": "\/Date(1747145991905)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "unigetui",
-            "Version": "3.1.8",
-            "Updated": "\/Date(1741973181053)\/"
+            "Version": "3.2.0",
+            "Updated": "\/Date(1746640121551)\/"
         },
         {
             "Info": "",
@@ -159,8 +159,8 @@
             "Info": "",
             "Source": "extras",
             "Name": "vscode",
-            "Version": "1.98.2",
-            "Updated": "\/Date(1741972432645)\/"
+            "Version": "1.100.2",
+            "Updated": "\/Date(1747398401996)\/"
         }
     ]
 }
