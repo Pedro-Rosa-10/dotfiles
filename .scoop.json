@@ -4,21 +4,21 @@
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main.git",
             "Updated": {
-                "value": "\/Date(1747816200000)\/",
+                "value": "\/Date(1749140992000)\/",
                 "DisplayHint": 2,
-                "DateTime": "quarta-feira, 21 de maio de 2025 05:30:00"
+                "DateTime": "quinta-feira, 5 de junho de 2025 13:29:52"
             },
-            "Manifests": 1389
+            "Manifests": 1391
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
             "Updated": {
-                "value": "\/Date(1747816178000)\/",
+                "value": "\/Date(1749142256000)\/",
                 "DisplayHint": 2,
-                "DateTime": "quarta-feira, 21 de maio de 2025 05:29:38"
+                "DateTime": "quinta-feira, 5 de junho de 2025 13:50:56"
             },
-            "Manifests": 2165
+            "Manifests": 2167
         }
     ],
     "apps": [
@@ -33,8 +33,8 @@
             "Info": "",
             "Source": "extras",
             "Name": "anydesk",
-            "Version": "9.5.4",
-            "Updated": "\/Date(1747142199864)\/"
+            "Version": "9.5.5",
+            "Updated": "\/Date(1749126270954)\/"
         },
         {
             "Info": "",
@@ -69,7 +69,7 @@
             "Source": null,
             "Name": "firefox",
             "Version": "136.0",
-            "Updated": "\/Date(1747777937902)\/"
+            "Updated": "\/Date(1749146998898)\/"
         },
         {
             "Info": "",
@@ -96,8 +96,8 @@
             "Info": "",
             "Source": "extras",
             "Name": "googlechrome",
-            "Version": "136.0.7103.114",
-            "Updated": "\/Date(1747398337791)\/"
+            "Version": "137.0.7151.69",
+            "Updated": "\/Date(1748953261205)\/"
         },
         {
             "Info": "",
@@ -123,6 +123,13 @@
         {
             "Info": "",
             "Source": "extras",
+            "Name": "paint.net",
+            "Version": "5.1.8",
+            "Updated": "\/Date(1749147653498)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
             "Name": "powertoys",
             "Version": "0.91.1",
             "Updated": "\/Date(1747763439509)\/"
@@ -131,15 +138,15 @@
             "Info": "",
             "Source": "main",
             "Name": "scoop-search",
-            "Version": "2.0.0",
-            "Updated": "\/Date(1737991388521)\/"
+            "Version": "2.1.0",
+            "Updated": "\/Date(1748902655226)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "spotify",
-            "Version": "1.2.63.394.g126b0d89",
-            "Updated": "\/Date(1747145991905)\/"
+            "Version": "1.2.65.255.g85e641b4",
+            "Updated": "\/Date(1749039896779)\/"
         },
         {
             "Info": "",
@@ -159,8 +166,8 @@
             "Info": "",
             "Source": "extras",
             "Name": "vscode",
-            "Version": "1.100.2",
-            "Updated": "\/Date(1747398401996)\/"
+            "Version": "1.100.3",
+            "Updated": "\/Date(1748988818085)\/"
         }
     ]
 }
